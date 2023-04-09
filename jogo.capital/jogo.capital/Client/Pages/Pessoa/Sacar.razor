@@ -1,0 +1,1004 @@
+@page "/Sacar" 
+@inject IAuthService AuthService;
+@inject NavigationManager _nav;
+
+<style "text/css">
+@@font-face {
+    font-family: "Tw Cen MT Std Extra Bold Cond";
+    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Extra Bold";
+    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen Classified MT Std";
+    src: url("../fontes/TwCenClassMTStd-Regular.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std";
+    src: url("../fontes/TwCenMTStd-Bold.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Ultra Bold";
+    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Ultra Bold Cond";
+    src: url("../fontes/TwCenMTStd-UltraBoldCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Medium Cond";
+    src: url("../fontes/TwCenMTStd-MediumCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Semi Medium";
+    src: url("../fontes/TwCenMTStd-SemiMedium.otf");
+}
+
+
+@@media screen and (max-width:1366px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .topo {
+        height: 130px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background: #FABA0E;
+        font-family: "Tw Cen MT Std Medium Cond";
+    }
+
+    .logo img {
+        display: flex;
+        width: 170px;
+        height: 200px;
+        margin-top: 27px;
+        margin-left: 30px;
+    }
+
+    .menu {
+        height: 130px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 30px;
+        font-size: 32px;
+    }
+
+        .menu a {
+            margin-top: 93px;
+            margin-right: 60px;
+            color: #1b6bb3;
+            text-decoration: none;
+        }
+
+    .jogar {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-top: 80px;
+        margin-right: 37px;
+        height: 42px;
+        width: 125px;
+        font-size: 40px;
+        color: #1b6bb3;
+        border: 1px solid #1b6bb3;
+        border-radius: 5px;
+    }
+
+    .nome {
+        margin-left: 30px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+        .nome p {
+            font-family: "Tw Cen MT Std Medium Cond";
+            font-size: 25px;
+            color: #1b6bb3;
+        }
+
+    .btn-nome {
+        margin-right: 37px;
+        height: 50px;
+        width: 205px;
+        font-size: 40px;
+        background: #edefee;
+        border: none;
+        border-radius: 2px;
+    }
+
+
+
+    .saldo {
+        margin-left: -30px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+        .saldo p {
+            font-family: "Tw Cen MT Std Medium Cond";
+            font-size: 25px;
+            color: #1b6bb3;
+        }
+
+    .btn-saldo {
+        margin-right: 37px;
+        height: 50px;
+        width: 205px;
+        background: #edefee;
+        border: none;
+        border-radius: 2px;
+    }
+
+        .btn-saldo p {
+            font-size: 27px;
+            font-family: "Tw Cen MT Std";
+            color: #1b6bb3;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+    .meio {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .click {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 110px;
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 27px;
+        color: #1b6bb3;
+        font-weight: 200;
+        background: #ffffff;
+        border: 3px solid #a8acac;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+
+    .btn-sacar{
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 29px;
+        color: #ffffff;
+        font-weight: 200;
+        background: #1b6bb3;
+        border: none;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+
+    .btn-sair {
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: 200;
+        background: #FABA0E;
+        border: none;
+        border-radius: 2px;
+        margin-top: 20px;
+    }
+
+    .ld-direito {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .encima {
+        display: flex;
+    }
+
+
+    .cinza {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .acumulou {
+        width: 400px;
+        height: 130px;
+        display: flex;
+        background: #eaeaea;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 100px;
+        border: 10px solid #b3b4b3;
+        border-radius: 100px;
+    }
+
+        .acumulou h1 {
+            font-family: "Tw Cen MT Std";
+            font-size: 20px;
+            color: #1b6bb3;
+        }
+
+        .acumulou h2 {
+            font-family: "Tw Cen MT Std";
+            font-size: 15px;
+            width: 200px;
+            color: #1b6bb3;
+        }
+
+    .btn1 {
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .btn2 {
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .btn1 h3 {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    .btn-acumulou {
+        margin-top: 5px;
+        margin-right: 2px;
+        height: 45px;
+        width: 22px;
+        background: #000000;
+        border-radius: 15px;
+    }
+
+    .acumulou2 {
+        width: 500px;
+        height: 180px;
+        display: flex;
+        background: #ffffff;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 20px;
+        background-image: url('../img/blacumulado.png');
+        background-position: center;
+        background-size: 500px 170px;
+        background-repeat: no-repeat;
+    }
+
+        .acumulou2 h1 {
+            font-family: "Tw Cen MT Std";
+            font-size: 25px;
+            width: 260px;
+            color: #1b6bb3;
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+
+    .btn-acumulou1 {
+        margin-top: 5px;
+        margin-right: 10px;
+        height: 45px;
+        width: 22px;
+        background: #000000;
+        border-radius: 15px;
+        margin-left: 40px;
+    }
+
+    .linha {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 5px;
+        display: flex;
+        height: 80px;
+        width: 1000px;
+        background: #1b6bb3;
+        color: #ffffff;
+        font-size: 75px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+    }
+
+    .ld-direito p {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 30px;
+        font-size: 35px;
+    }
+
+    .receber {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 10px;
+        display: flex;
+        height: 300px;
+        width: 900px;
+        background: #eaeaea;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 55px;
+    }
+
+    .pix {
+        width: 250px;
+        height: 240px;
+        display: flex;
+        background-image: url('../img/pix2.png');
+        background-position: center;
+        background-size: 250px 240px;
+        background-repeat: no-repeat;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .transferencia {
+        width: 250px;
+        height: 240px;
+        display: flex;
+        background-image: url('../img/transf.png');
+        background-position: center;
+        background-size: 250px 240px;
+        background-repeat: no-repeat;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    footer {
+        display: block;
+        color: #ffffff;
+        height: 100%;
+        font-family: "Tw Cen MT Std";
+    }
+
+    .rodape {
+        height: 300px;
+        margin-top: 50px;
+        flex-direction: row;
+        background: #292d2f;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .copy p {
+        margin-top: 260px;
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .redes {
+        margin-top: 70px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+        .redes i {
+            margin-top: 15px;
+            text-align: center;
+            align-items: center;
+            font-size: 30px;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .redes h2 {
+            margin-top: 15px;
+        }
+
+        .redes .um {
+            width: 140px;
+            height: 70px;
+        }
+
+        .redes .dois {
+            width: 140px;
+            height: 58px;
+            margin-bottom: 6px;
+        }
+
+    .direita {
+        margin-top: 50px;
+        margin-left: 180px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+        .direita img {
+            height: 150px;
+            width: 230px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+    .fa-envelope {
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .direita h3 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .fa-ban {
+        color: #ff0000;
+        font-size: 18px;
+    }
+}
+
+@@media screen and (max-width:420px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 1350px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topo {
+        height: 130px;
+        width: 1350px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background: #FABA0E;
+        font-family: "Tw Cen MT Std Medium Cond";
+    }
+
+    .logo img {
+        display: flex;
+        width: 170px;
+        height: 200px;
+        margin-top: 27px;
+        margin-left: 30px;
+    }
+
+    .menu {
+        height: 130px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 30px;
+        font-size: 32px;
+    }
+
+        .menu a {
+            margin-top: 93px;
+            margin-right: 60px;
+            color: #1b6bb3;
+            text-decoration: none;
+        }
+
+    .jogar {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-top: 80px;
+        margin-right: 37px;
+        height: 42px;
+        width: 125px;
+        font-size: 40px;
+        color: #1b6bb3;
+        border: 1px solid #1b6bb3;
+        border-radius: 5px;
+    }
+
+    .nome {
+        margin-left: 30px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+        .nome p {
+            font-family: "Tw Cen MT Std Medium Cond";
+            font-size: 25px;
+            color: #1b6bb3;
+        }
+
+    .btn-nome {
+        margin-right: 37px;
+        height: 50px;
+        width: 205px;
+        font-size: 40px;
+        background: #edefee;
+        border: none;
+        border-radius: 2px;
+    }
+
+
+
+    .saldo {
+        margin-left: -30px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+        .saldo p {
+            font-family: "Tw Cen MT Std Medium Cond";
+            font-size: 25px;
+            color: #1b6bb3;
+        }
+
+    .btn-saldo {
+        margin-right: 37px;
+        height: 50px;
+        width: 205px;
+        background: #edefee;
+        border: none;
+        border-radius: 2px;
+    }
+
+        .btn-saldo p {
+            font-size: 27px;
+            font-family: "Tw Cen MT Std";
+            color: #1b6bb3;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+    .meio {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .click {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 110px;
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 27px;
+        color: #1b6bb3;
+        font-weight: 200;
+        background: #ffffff;
+        border: 3px solid #a8acac;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+
+    .btn-apostar {
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 29px;
+        color: #ffffff;
+        font-weight: 200;
+        background: #1b6bb3;
+        border: none;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+
+    .btn-sair {
+        margin-right: 37px;
+        height: 50px;
+        width: 190px;
+        font-family: "Tw Cen MT Std";
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: 200;
+        background: #FABA0E;
+        border: none;
+        border-radius: 2px;
+        margin-top: 20px;
+    }
+
+    .ld-direito {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .encima {
+        display: flex;
+    }
+
+
+    .cinza {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .acumulou {
+        width: 400px;
+        height: 130px;
+        display: flex;
+        background: #eaeaea;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 100px;
+        border: 10px solid #b3b4b3;
+        border-radius: 100px;
+    }
+
+        .acumulou h1 {
+            font-family: "Tw Cen MT Std";
+            font-size: 20px;
+            color: #1b6bb3;
+        }
+
+        .acumulou h2 {
+            font-family: "Tw Cen MT Std";
+            font-size: 15px;
+            width: 200px;
+            color: #1b6bb3;
+        }
+
+    .btn1 {
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .btn2 {
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .btn1 h3 {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    .btn-acumulou {
+        margin-top: 5px;
+        margin-right: 2px;
+        height: 45px;
+        width: 22px;
+        background: #000000;
+        border-radius: 15px;
+    }
+
+    .acumulou2 {
+        width: 500px;
+        height: 180px;
+        display: flex;
+        background: #ffffff;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 20px;
+        background-image: url('../img/blacumulado.png');
+        background-position: center;
+        background-size: 500px 170px;
+        background-repeat: no-repeat;
+    }
+
+        .acumulou2 h1 {
+            font-family: "Tw Cen MT Std";
+            font-size: 25px;
+            width: 260px;
+            color: #1b6bb3;
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+
+    .btn-acumulou1 {
+        margin-top: 5px;
+        margin-right: 10px;
+        height: 45px;
+        width: 22px;
+        background: #000000;
+        border-radius: 15px;
+        margin-left: 40px;
+    }
+
+    .linha {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 5px;
+        display: flex;
+        height: 80px;
+        width: 1000px;
+        background: #1b6bb3;
+        color: #ffffff;
+        font-size: 75px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+    }
+
+    .ld-direito p {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 30px;
+        font-size: 35px;
+    }
+
+    .receber {
+        font-family: "Tw Cen MT Std Extra Bold";
+        margin-top: 10px;
+        display: flex;
+        height: 300px;
+        width: 900px;
+        background: #eaeaea;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 55px;
+    }
+
+    .pix {
+        width: 250px;
+        height: 240px;
+        display: flex;
+        background-image: url('../img/pix2.png');
+        background-position: center;
+        background-size: 250px 240px;
+        background-repeat: no-repeat;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .transferencia {
+        width: 250px;
+        height: 240px;
+        display: flex;
+        background-image: url('../img/transf.png');
+        background-position: center;
+        background-size: 250px 240px;
+        background-repeat: no-repeat;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+    footer {
+        margin-top: 260px;
+        display: block;
+        color: #ffffff;
+        font-family: "Tw Cen MT Std";
+        width: 100%;
+        height: 2.5rem;
+    }
+
+    .rodape {
+        height: 300px;
+        margin-top: 50px;
+        flex-direction: row;
+        background: #292d2f;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .copy p {
+        margin-top: 260px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .redes {
+        margin-top: 70px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+        .redes i {
+            margin-top: 15px;
+            text-align: center;
+            align-items: center;
+            font-size: 30px;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .redes h2 {
+            margin-top: 1px;
+        }
+
+        .redes .um {
+            width: 160px;
+            height: 70px;
+        }
+
+        .redes .dois {
+            width: 160px;
+            height: 58px;
+            margin-bottom: 6px;
+        }
+
+    .direita {
+        margin-top: 50px;
+        margin-left: 180px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+        .direita img {
+            height: 150px;
+            width: 230px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+    .fa-envelope {
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .direita h3 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .fa-ban {
+        color: #ff0000;
+        font-size: 18px;
+    }
+}
+
+</style>
+
+ <header>
+        <div class="topo">
+            <div class="logo"> <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" /></div>
+            <div class="menu">
+                <a href="#">HOME</a>
+                <a href="#">GUIA DO JOGO</a>
+                <a href="#">SORTEIOS</a>
+                <button class="jogar"> JOGAR</button>
+
+                <div class="nome">
+                    <p> <b> Nome </b></p>
+                    <button class="btn-nome">  </button>
+                </div>
+
+                <div class="saldo">
+                    <p> <b>SALDO</b></p>
+                    <button class="btn-saldo"><p> R$1.500,00 </p>  </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="meio">
+
+        <div class="click">
+            <button class="btn"><b>PERFIL</b>  </button>
+            <button class="btn"> BILHETES </button>
+            <button class="btn"> DEPOSITAR </button>
+            <button class="btn-sacar"> SACAR </button>
+            <button class="btn"> APOSTAR </button>
+            <button class="btn"> RESULTADOS </button>
+            <button class="btn"> TABELA </button>
+            <button class="btn"> AJUDA </button>
+            <button class="btn-sair"> SAIR </button>
+        </div>
+
+
+
+
+        <div class="ld-direito">
+
+
+            <div class="encima">
+                <div class="acumulou">
+                    <h1><b>FALTA</b></h1>
+
+                    <div class="cinza">
+                        <div class="btn1">
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button> <h3> : </h3>
+                        </div>
+                        <div class="btn2">
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                        </div>
+                    </div>
+                    <h2><b>PARA O PRÓ XIMO SORTEIO DO JOGO DO BICHO</b></h2>
+                </div>
+
+                <div class="acumulou2">
+                    <h1>BOLÃ O ACUMULADO</h1>
+
+                    <div class="cinza">
+                        <div class="btn1">
+                            <button class="btn-acumulou1"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                        </div>
+                        <div class="btn2">
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="linha"> SOLICITAR SAQUE </div>
+            <p>SELECIONE A FORMA QUE DESEJA RECEBER</p>
+
+            <center>
+                <div class="receber">
+                    <button class="pix"></button>
+                    <button class="transferencia"></button>
+                </div>
+            </center>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="rodape">
+            <div class="copy"> <p> Copyright 1993-2022 Animal Game N.V </p></div>
+
+            <div class="redes">
+                <h1> SIGA, CURTE E COMPARTILHE!</h1>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-vimeo-v"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-discord"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <h2> Baixe nosso aplicativo</h2>
+                <img class="um" src="img/google.png" />
+                <img class="dois" src="img/Img_app_store.png" />
+            </div>
+
+            <div class="direita">
+                <img class="dois" src="img/bandeira.png" />
+                <div class="link">
+                    <h2> <i class="fa-regular fa-envelope"></i> suporte@jogos.capital</h2>
+                </div>
+
+                <h3> Proibido jogar menores de 18 anos <i class="fa-solid fa-ban"></i> </h3>
+            </div>
+
+
+        </div>
+    </footer>

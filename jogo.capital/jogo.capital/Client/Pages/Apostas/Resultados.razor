@@ -1,0 +1,603 @@
+@page "/Resultados" 
+@inject IAuthService AuthService;
+@inject NavigationManager _nav;
+
+<style "text/css">
+@@font-face {
+    font-family: "Tw Cen MT Std Extra Bold Cond";
+    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Extra Bold";
+    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen Classified MT Std";
+    src: url("../fontes/TwCenClassMTStd-Regular.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std";
+    src: url("../fontes/TwCenMTStd-Bold.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Ultra Bold";
+    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Ultra Bold Cond";
+    src: url("../fontes/TwCenMTStd-UltraBoldCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Medium Cond";
+    src: url("../fontes/TwCenMTStd-MediumCond.otf");
+}
+
+@@font-face {
+    font-family: "Tw Cen MT Std Semi Medium";
+    src: url("../fontes/TwCenMTStd-SemiMedium.otf");
+}
+
+@@media screen and (max-width:1366px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .topo {
+        height: 130px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background: #FABA0E;
+        font-family: "Tw Cen MT Std Medium Cond";
+    }
+
+    .logo img {
+        position:absolute;
+        display: flex;
+        width: 170px;
+        height: 200px;
+        margin-top: 27px;
+        margin-left: 20px;
+    }
+
+    .menu {
+        margin-top: 87px;
+        margin-left: 200px;
+        font-size: 32px;
+    }
+
+        .menu a {
+            margin-right: 37px;
+            color: #1b6bb3;
+            text-decoration: none;
+        }
+
+    .jogar {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-right: 37px;
+        height: 42px;
+        width: 125px;
+        font-size: 40px;
+        color: #1b6bb3;
+        border: 1px solid #1b6bb3;
+        border-radius: 5px;
+    }
+
+    .cad {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-right: 37px;
+        height: 31px;
+        width: 160px;
+        font-size: 32px;
+        color: #ffffff;
+        background: #1b6bb3;
+        border: 0px solid #013ADF;
+    }
+
+    .linha {
+        margin-top: 40px;
+    }
+
+        .linha img {
+            object-fit: cover;
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+
+    .fa-paw {
+        margin-top: 5px;
+        font-size: 170px;
+        margin-right: -200px;
+        margin-left: 100px;
+    }
+
+    .triang {
+        font-family: "Tw Cen MT Std Extra Bold";
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 50px;
+        margin-top: 50px;
+    }
+
+    .fa-play {
+        margin-top: 40px;
+        font-size: 50px;
+        margin-right: 40px;
+        margin-left: 40px;
+        color: #1b6bb3;
+    }
+
+    .table {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    .DiaSem {
+        display: flex;
+        width: 100%;
+        justify-content:space-around;
+    }
+
+
+    .dia {
+        font-family: "Tw Cen MT Std Extra Bold";
+        font-size: 30px;
+        border: none;
+        background: #ffffff;
+        display: inline-block;
+        width: 14.2%;
+    }
+
+    .dias {
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        background: #ffffff;
+        width: 100%;
+        flex-wrap:wrap;
+    }
+
+    .escudo {
+        display: inline-block;
+        border: none;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        background-image: url('../img/escudo.png');
+        background-position: center;
+        background-size: 120px 120px;
+        background-repeat: no-repeat;
+        
+    }
+
+        .escudo p {
+            font-family: "Tw Cen MT Std Extra Bold";
+            font-size: 58px;
+            margin-top: 20px;
+            margin-left: -55px;
+            letter-spacing: -6px;
+        }
+
+    footer {
+        display: block;
+        color: #ffffff;
+        height: 100%;
+        font-family: "Tw Cen MT Std";
+    }
+
+    .rodape {
+        height: 300px;
+        margin-top: 50px;
+        flex-direction: row;
+        background: #292d2f;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .copy p {
+        margin-top: 260px;
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .redes {
+        margin-top: 70px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+        .redes i {
+            margin-top: 15px;
+            text-align: center;
+            align-items: center;
+            font-size: 30px;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .redes h2 {
+            margin-top: 15px;
+        }
+
+        .redes .um {
+            width: 140px;
+            height: 70px;
+        }
+
+        .redes .dois {
+            width: 140px;
+            height: 58px;
+            margin-bottom: 6px;
+        }
+
+    .direita {
+        margin-top: 50px;
+        margin-left: 180px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+        .direita img {
+            height: 150px;
+            width: 230px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+    .fa-envelope {
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .direita h3 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .fa-ban {
+        color: #ff0000;
+        font-size: 18px;
+    }
+}
+
+@@media screen and (max-width:420px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 1350px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topo {
+        height: 130px;
+        width: 1350px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background: #FABA0E;
+        font-family: "Tw Cen MT Std Medium Cond";
+    }
+
+    .logo img {
+        position:absolute;
+        display: flex;
+        width: 170px;
+        height: 200px;
+        margin-top: 27px;
+        margin-left: 20px;
+    }
+
+    .menu {
+        margin-top: 87px;
+        margin-left: 200px;
+        font-size: 32px;
+    }
+
+        .menu a {
+            margin-right: 37px;
+            color: #1b6bb3;
+            text-decoration: none;
+        }
+
+    .jogar {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-right: 37px;
+        height: 42px;
+        width: 125px;
+        font-size: 40px;
+        color: #1b6bb3;
+        border: 1px solid #1b6bb3;
+        border-radius: 5px;
+    }
+
+    .cad {
+        font-family: "Tw Cen MT Std Medium Cond";
+        margin-right: 37px;
+        height: 31px;
+        width: 160px;
+        font-size: 32px;
+        color: #ffffff;
+        background: #1b6bb3;
+        border: 0px solid #013ADF;
+    }
+
+
+    .linha {
+        margin-top: 40px;
+    }
+
+        .linha img {
+            object-fit: cover;
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+    .table {
+        max-width: 1300px;
+        margin: 20px auto;
+        margin-top: 50px;
+        padding: 30px;
+    }
+
+    .DiaSem {
+        display: flex;
+        width: 100%;
+        margin-bottom: 30px;
+        justify-content: space-around;
+    }
+
+
+    .dia {
+        font-family: "Tw Cen MT Std Extra Bold";
+        font-size: 30px;
+        border: none;
+        background: #ffffff;
+        display: inline-block;
+        width: 14.2%;
+    }
+
+    .dias {
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        background: #ffffff;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .escudo {
+        display: inline-block;
+        border: none;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        background-image: url('../img/escudo.png');
+        background-position: center;
+        background-size: 120px 120px;
+        background-repeat: no-repeat;
+    }
+
+        .escudo p {
+            font-family: "Tw Cen MT Std Extra Bold";
+            font-size: 58px;
+            margin-top: 20px;
+            margin-left: -55px;
+            letter-spacing: -6px;
+        }
+
+    footer {
+        display: block;
+        color: #ffffff;
+        height: 100%;
+        font-family: "Tw Cen MT Std";
+    }
+
+    .rodape {
+        height: 300px;
+        margin-top: 80px;
+        flex-direction: row;
+        background: #292d2f;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .copy p {
+        margin-top: 260px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .redes {
+        margin-top: 70px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+        .redes i {
+            margin-top: 15px;
+            text-align: center;
+            align-items: center;
+            font-size: 30px;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .redes h2 {
+            margin-top: 1px;
+        }
+
+        .redes .um {
+            width: 160px;
+            height: 70px;
+        }
+
+        .redes .dois {
+            width: 160px;
+            height: 58px;
+            margin-bottom: 6px;
+        }
+
+    .direita {
+        margin-top: 50px;
+        margin-left: 180px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+        .direita img {
+            height: 150px;
+            width: 230px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+    .fa-envelope {
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .direita h3 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .fa-ban {
+        color: #ff0000;
+        font-size: 18px;
+    }
+}
+
+</style>
+
+<header>
+        <div class="topo">
+            <div class="logo"> <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" /></div>
+            <div class="menu">
+                <a href="#">HOME</a>
+                <a href="#">GUIA DO JOGO</a>
+                <a href="#">SORTEIOS</a>
+                <button class="jogar"> JOGAR</button>
+                <a href="#">RESULTADO</a>
+                <a href="#">ENTRAR</a>
+                <button class="cad"> CADASTRAR</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="linha"> <img src="img/resuljog.png" /> </div>
+
+    <center>
+        <div class="calendario">
+            <div class="triang">
+                <i class="fa-sharp fa-solid fa-play fa-flip-horizontal"></i>
+                <h1>NOVEMBRO</h1>
+                <i class="fa-sharp fa-solid fa-play"></i>
+            </div>
+
+            <div class="table">
+                <div class="DiaSem">
+                    <button class="dia" style="color: #1b6bb3">  DOMINGO</button>
+                    <button class="dia"> SEGUNDA </button>
+                    <button class="dia"> TERÇ A </button>
+                    <button class="dia"> QUARTA </button>
+                    <button class="dia"> QUINTA </button>
+                    <button class="dia"> SEXTA </button>
+                    <button class="dia"> SÁ BADO </button>
+                </div>
+
+                <div class="dias">
+                    <button class="escudo">  <p> 01 </p> </button>
+                    <button class="escudo">  <p> 02 </p> </button>
+                    <button class="escudo">  <p> 03 </p> </button>
+                    <button class="escudo">  <p> 04 </p> </button>
+                    <button class="escudo">  <p> 05 </p> </button>
+                    <button class="escudo">  <p> 06 </p> </button>
+                    <button class="escudo">  <p> 07 </p> </button>
+                    <button class="escudo">  <p> 08 </p> </button>
+                    <button class="escudo">  <p> 09 </p> </button>
+                    <button class="escudo">  <p> 10 </p> </button>
+                    <button class="escudo">  <p> 11 </p> </button>
+                    <button class="escudo">  <p> 12 </p> </button>
+                    <button class="escudo">  <p> 13 </p> </button>
+                    <button class="escudo">  <p> 14 </p> </button>
+                    <button class="escudo">  <p> 15 </p> </button>
+                    <button class="escudo">  <p> 16 </p> </button>
+                    <button class="escudo">  <p> 17 </p> </button>
+                    <button class="escudo">  <p> 18 </p> </button>
+                    <button class="escudo">  <p> 19 </p> </button>
+                    <button class="escudo">  <p> 20 </p> </button>
+                    <button class="escudo">  <p> 21 </p> </button>
+                    <button class="escudo">  <p> 22 </p> </button>
+                    <button class="escudo">  <p> 23 </p> </button>
+                    <button class="escudo">  <p> 24 </p> </button>
+                    <button class="escudo">  <p> 25 </p> </button>
+                    <button class="escudo">  <p> 26 </p> </button>
+                    <button class="escudo">  <p> 27 </p> </button>
+                    <button class="escudo">  <p> 28 </p> </button>
+                    <button class="escudo">  <p> 29 </p> </button>
+                    <button class="escudo">  <p> 30 </p> </button>
+                </div>
+
+            </div>
+        </div>
+    </center>
+
+    <footer>
+        <div class="rodape">
+            <div class="copy"> <p> Copyright 1993-2022 Animal Game N.V </p></div>
+
+            <div class="redes">
+                <h1> SIGA, CURTE E COMPARTILHE!</h1>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-vimeo-v"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-discord"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <h2> Baixe nosso aplicativo</h2>
+                <img class="um" src="img/google.png" />
+                <img class="dois" src="img/Img_app_store.png" />
+            </div>
+
+            <div class="direita">
+                <img class="dois" src="img/bandeira.png" />
+                <div class="link">
+                    <h2> <i class="fa-regular fa-envelope"></i> suporte@jogos.capital</h2>
+                </div>
+
+                <h3> Proibido jogar menores de 18 anos <i class="fa-solid fa-ban"></i> </h3>
+            </div>
+
+        </div>
+    </footer>

@@ -1,0 +1,13 @@
+﻿@page "/Encerrar"
+@inject IAuthService AuthService;
+@inject NavigationManager nav;
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.Logout();
+        nav.NavigateTo("/");
+    }
+}
+

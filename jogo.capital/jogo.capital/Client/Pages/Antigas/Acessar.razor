@@ -1,0 +1,79 @@
+﻿@page "/Acessar"
+@inject IAuthService AuthService;
+@inject NavigationManager nav;
+
+@if (ShowErros)
+{
+        <div class="alert alert-danger" role="alert">
+            @foreach (var erro in Erros)
+                {
+                        <p>@erro</p>
+                }
+        </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Informe seus Dados</h5>
+        <EditForm Model="regModel" OnValidSubmit="HandleRegistration">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="CadastrasePor">Deseja Acessar por </label>
+                <InputSelect id="CadastrasePor" class="form-control" @bind-Value="regModel.Tipo" @onclick="SelectionChanged">
+                    <option value="Celular">Celular</option>
+                    <option value="E-mail">E-mail</option>
+                </InputSelect>
+            </div>
+            <div class="form-group">
+                @if (regModel.Tipo == "Celular")
+                {
+                    <label for="documento">Celular</label>
+                }
+                else
+                {
+                    <label for="documento">E-mail</label>
+                }
+                <InputText id="documento" class="form-control" @bind-Value="regModel.Documento" />
+                <ValidationMessage For="@(() => regModel.Documento)" />
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <InputText id="password" class="form-control" @bind-Value="regModel.Senha" />
+                <ValidationMessage For="@(() => regModel.Senha)" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Acessar</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private acessarModel regModel = new acessarModel();
+    private bool ShowErros;
+    private IEnumerable<string> Erros;
+    protected override void OnInitialized()
+    {
+        regModel.Tipo = "Celular";
+    }
+    private async Task HandleRegistration()
+    {
+        ShowErros = false;
+        var result = await AuthService.Login(regModel);
+        if (result.Sucesso)
+        {
+            nav.NavigateTo("/");
+        } else
+        {
+            Erros = result.Erros;
+            ShowErros = true;
+        }
+    }
+    private async void SelectionChanged()
+    {
+        StateHasChanged();
+    }
+}
+

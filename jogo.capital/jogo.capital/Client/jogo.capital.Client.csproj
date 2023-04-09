@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'jogo.capital' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.14" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.14" />
+    <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+    <PackageReference Include="Radzen.Blazor" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\jogo.capital.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.AspNetCore.Components.Authorization" />
+    <None Remove="Blazored.LocalStorage" />
+    <None Remove="Providers\" />
+    <None Remove="Services\" />
+    <None Remove="Radzen.Blazor" />
+    <None Remove="Pages\Apostas\" />
+    <None Remove="Pages\Pessoa\" />
+    <None Remove="Pages\4dm1n\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Providers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Pages\Apostas\" />
+    <Folder Include="Pages\Pessoa\" />
+    <Folder Include="Pages\4dm1n\" />
+  </ItemGroup>
+</Project>

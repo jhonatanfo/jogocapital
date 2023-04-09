@@ -1,0 +1,101 @@
+﻿@page "/CadastrarseEmail"
+@inject IAuthService AuthService;
+@inject NavigationManager nav;
+
+@if (ShowErros)
+{
+    <div class="alert alert-danger" role="alert">
+        @foreach (var erro in Erros)
+        {
+            <p>@erro</p>
+        }
+    </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Informe seus Dados</h5>
+        <EditForm Model="regModel" OnValidSubmit="HandleRegistration">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            @if (ShowContraSenha == false)
+            {
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <InputText id="email" class="form-control" @bind-Value="regModel.email" />
+                    <ValidationMessage For="@(() => regModel.email)" />
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <InputText type="password" id="senha" class="form-control" @bind-Value="regModel.senha" />
+                    <ValidationMessage For="@(() => regModel.senha)" />
+                </div>
+                <div class="form-group">
+                    <label for="confirme">Confirme</label>
+                    <InputText type="password" id="confirme" class="form-control" @bind-Value="regModel.confirmarSenha" />
+                    <ValidationMessage For="@(() => regModel.confirmarSenha)" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label for="codSeguranca">Código de Segurança</label>
+                    <InputText id="codSeguranca" class="form-control" @bind-Value="regModel.confirmarCodigo" />
+                    <ValidationMessage For="@(() => regModel.confirmarCodigo)" />
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">@estagio</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private usuariosCadastrarseEmailModel regModel = new usuariosCadastrarseEmailModel();
+    private bool ShowErros;
+    private bool ShowContraSenha = false;
+    private IEnumerable<string> Erros;
+    private string estagio = "Cadastrar-se";
+    protected override void OnInitialized()
+    {
+        estagio = "Cadastrar-se";
+        ShowContraSenha = false;
+        regModel.confirmarCodigo = "0";
+    }
+    private async Task HandleRegistration()
+    {
+        ShowErros = false;
+        if (ShowContraSenha == false)
+        {
+            var result = await AuthService.RegisterEmail(regModel);
+            if (result.Sucesso)
+            {
+                ShowContraSenha = true;
+                estagio = "Confirmar";
+            }
+            else
+            {
+                Erros = result.Erros;
+                ShowErros = true;
+            }
+        }
+        else
+        {
+            var result = await AuthService.ValidarEmail(regModel);
+            if (result.Sucesso)
+            {
+                nav.NavigateTo("/Acessar");
+            }
+            else
+            {
+                estagio = "Cadastrar-se";
+                regModel.confirmarCodigo = "0";
+                ShowContraSenha = false;
+                Erros = result.Erros;
+                ShowErros = true;
+            }
+        }
+    }
+}
+

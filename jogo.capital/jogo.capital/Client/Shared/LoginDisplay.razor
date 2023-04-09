@@ -1,0 +1,11 @@
+﻿<AuthorizeView>
+    <Authorized>
+        Olá, @context.User.Identity.Name
+        <a href="Encerrar">Encerrar</a>
+    </Authorized>
+    <NotAuthorized>
+        <a href="CadastrarseCelular">Cadastrar Celular</a>
+        <a href="CadastrarseEmail">Cadastrar E-mail</a>
+        <a href="Acessar">Acessar</a>
+    </NotAuthorized>
+</AuthorizeView>
