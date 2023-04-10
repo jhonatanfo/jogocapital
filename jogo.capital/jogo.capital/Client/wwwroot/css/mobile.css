@@ -1,0 +1,98 @@
+@media (min-width: 1200px) and (max-width: 1600px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /*  Pagina Inicial Bem Vindo */
+  .secao-iniciais .entrar .icon-bem-vindo {
+    width: 254px;
+    height: 158px;
+  }
+  /* final Pagina Inicial Bem Vindo */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /*  Pagina Inicial Bem Vindo */
+  .secao-iniciais .container {
+    width: 80%;
+  }
+  .secao-iniciais .logo-img img {
+    width: 180px;
+    height: 222px;
+    margin: auto;
+  }
+  .secao-iniciais .entrar .icon-bem-vindo {
+    width: 230px;
+    height: 158px;
+    margin-left: 12px;
+  }
+  .secao-iniciais .botao button {
+    width: 109px;
+  }
+  .secao-iniciais .btn-criar {
+    padding: 3px 35px;
+    font-size: 18px;
+  }
+  /* final Pagina Inicial Bem Vindo */
+}
+
+@media (min-width: 541px) and (max-width: 767px) {
+}
+
+@media (min-width: 0px) and (max-width: 540px) {
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  /*  Pagina Inicial Bem Vindo */
+  .secao-iniciais .logo-img {
+    height: 250px;
+  }
+  .secao-iniciais .logo-img img {
+    width: 129px;
+  }
+
+  .secao-iniciais .container {
+    width: 90%;
+  }
+  .secao-iniciais {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .secao-iniciais {
+    background: -webkit-linear-gradient(to bottom, #f7c934 250px, white 250px);
+    background: -o-linear-gradient(to bottom, #f7c934 250px, white 250px);
+    background: -moz-linear-gradient(to bottom, #f7c934 250px, white 250px);
+    background: linear-gradient(to bottom, #f7c934 250px, white 250px);
+  }
+  .secao-iniciais .entrar .icon-bem-vindo {
+    width: 200px;
+    height: 128px;
+    margin: 0 auto;
+    display: block;
+  }
+  .secao-iniciais .entrar h1 {
+    margin: 20px 0 9px 0;
+    text-align: center;
+  }
+
+  .secao-iniciais .botao {
+    width: 376px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .secao-iniciais .btn-criar {
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+
+  .secao-iniciais .entrar {
+    height: auto;
+    padding: 25px 0 37px 0;
+  }
+  /* final Pagina Inicial Bem Vindo */
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+}

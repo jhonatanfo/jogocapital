@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
+}
+@font-face {
+  font-family: "Tw Cen MT Std Extra Bold";
+  src: url("../fontes/TwCenMTStd-ExtraBold.otf");
+}
+@font-face {
+  font-family: "Tw Cen Classified MT Std";
+  src: url("../fontes/TwCenClassMTStd-Regular.otf");
+}
+@font-face {
+  font-family: "Tw Cen MT Std-Bold";
+  src: url("../fontes/TwCenMTStd-Bold.otf");
+}
+@font-face {
+  font-family: "Tw Cen MT Std Ultra Bold";
+  src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
+}
+@font-face {
+  font-family: "Tw Cen MT Std Medium Cond";
+  src: url("../fontes/TwCenMTStd-BoldCond.otf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.sem-espaco {
+  padding: 0;
+  margin: 0;
+}
+
+/*  Pagina Inicial Bem Vindo */
+
+.secao-iniciais {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-linear-gradient(right, #f7c934 44%, white 44%);
+  background: -o-linear-gradient(right, #f7c934 44%, white 44%);
+  background: -moz-linear-gradient(right, #f7c934 44%, white 44%);
+  background: linear-gradient(to right, #f7c934 44%, white 44%);
+}
+
+.secao-iniciais .container {
+  width: 64%;
+  box-shadow: 0 0 30px #00000075;
+  padding: 0;
+}
+
+.secao-iniciais .logo-img {
+  display: grid;
+  align-items: center;
+  height: 80vh;
+}
+
+.secao-iniciais .logo-img img {
+  width: 180px;
+  height: auto;
+  margin: auto;
+}
+.secao-iniciais .entrar {
+  display: grid;
+  align-items: center;
+  height: 80vh;
+}
+
+.secao-iniciais .entrar .icon-bem-vindo {
+  width: 329px;
+  height: 208px;
+  margin-left: -8px;
+}
+
+.secao-iniciais .entrar h1 {
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  font-size: 22px;
+  text-align: left;
+  color: #0a4c8e;
+  margin: 20px 0 9px 25px;
+}
+
+.secao-iniciais .botao {
+  display: inline-flex;
+}
+
+.secao-iniciais .botao button {
+  width: 155px;
+  height: 105px;
+}
+
+.secao-iniciais .btn-cel,
+.secao-iniciais .btn-email {
+  border: 1px solid #555555a6;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  font-size: 23px;
+  box-shadow: 0px 0px 4px #3c3c3cbd;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(217, 217, 217, 1) 100%
+  );
+}
+
+.secao-iniciais .botao button .icon-celular,
+.secao-iniciais .botao button .icon-email {
+  display: block;
+  margin: 0 auto;
+}
+
+.secao-iniciais .btn-criar {
+  padding: 3px 71px;
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  background-color: #66b22e;
+  color: #ffffff;
+  border: 1px solid #66b22e;
+  border-radius: 4px;
+  margin-left: 17px;
+  margin-top: 45px;
+}
+
+/* final Pagina Inicial Bem Vindo */
