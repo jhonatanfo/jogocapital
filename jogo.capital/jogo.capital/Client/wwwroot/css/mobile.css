@@ -70,9 +70,10 @@
     margin: 0 auto;
     display: block;
   }
-  .secao-iniciais .entrar h1 {
-    margin: 20px 0 9px 0;
-    text-align: center;
+  .secao-iniciais .entrar h1,
+  .secao-iniciais .entrar .titulo {
+    margin: 20px 0 9px 0 !important;
+    text-align: center !important;
   }
 
   .secao-iniciais .botao {
@@ -81,15 +82,21 @@
     display: flex;
   }
 
-  .secao-iniciais .btn-criar {
+  .secao-iniciais .btn-criar,
+  .secao-iniciais .btn-voltar {
     display: block;
     margin: 0 auto;
     margin-top: 45px;
+    width: 337px;
   }
 
   .secao-iniciais .entrar {
     height: auto;
     padding: 25px 0 37px 0;
+  }
+
+  .secao-iniciais .entrar .destaque {
+    font-size: 64px;
   }
   /* final Pagina Inicial Bem Vindo */
 }

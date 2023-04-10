@@ -70,13 +70,21 @@
   height: 80vh;
 }
 
+.secao-iniciais .entrar .destaque {
+  font-size: 107px;
+  color: #bfbebe;
+  letter-spacing: -3px;
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  margin-left: 12px;
+}
+
 .secao-iniciais .entrar .icon-bem-vindo {
   width: 329px;
   height: 208px;
   margin-left: -8px;
 }
 
-.secao-iniciais .entrar h1 {
+.secao-iniciais .entrar .titulo {
   font-family: "Tw Cen MT Std Extra Bold Cond";
   font-size: 22px;
   text-align: left;
@@ -124,6 +132,26 @@
   border-radius: 4px;
   margin-left: 17px;
   margin-top: 45px;
+}
+
+.secao-iniciais .btn-voltar {
+  padding: 3px 71px;
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+  background-color: #66b22e;
+  color: #ffffff;
+  border: 1px solid #66b22e;
+  border-radius: 4px;
+  margin-left: 17px;
+  margin-top: 45px;
+  display: block;
+  height: 40px;
+  padding-left: 92px;
+}
+
+.secao-iniciais .btn-voltar i {
+  position: absolute;
+  margin: 4px 0 0 -52px;
 }
 
 /* final Pagina Inicial Bem Vindo */

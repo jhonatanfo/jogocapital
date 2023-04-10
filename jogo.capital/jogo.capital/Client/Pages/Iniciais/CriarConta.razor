@@ -2,347 +2,43 @@
 
 @inject NavigationManager _nav;
 
-<style "text/css">
-	@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
+<section class="secao-iniciais">
+    <div class="container sem-espaco">
+        <div class="row sem-espaco">
+            <div class="col-xs-12 col-sm-12 col-md-5 sem-espaco">
+                <div class="logo-img">
+                    <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 sem-espaco">
+                <div class="entrar">
+                    <div>
 
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
+                        <h1 class="destaque">Cadastro</h1>
 
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
+                        <div class="titulo"> Cadastrar por</div>
 
-@@font-face {
-    font-family: "Tw Cen MT Std-Bold";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-BoldCond.otf");
-}
+                        <div class="botao">
+                            <button @onclick="@(()=>_nav.NavigateTo(" /criarcontacelular"))" class="btn-cel">
+                                <img src="img/icon-celular.png" class="icon-celular">
+                                CELULAR
+                            </button>
+                            <button @onclick="@(()=>_nav.NavigateTo(" /criarcontaemail"))" class="btn-email">
+                                <img src="img/icon-email.png" class="icon-email">
+                                E-MAIL
+                            </button>
+                        </div>
 
 
 
+                        <button class="btn-voltar" @onclick="@(()=>_nav.NavigateTo(" /inicial"))">
+                            <i class="fa-solid fa-arrow-left"> </i>
+                            <p>Voltar</p>
+                        </button>
+                    </div>
 
-@@media screen and (max-width:1366px) {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-    }
-
-    .btn-senha {
-        width: 270px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 19px;
-    }
-
-    .container {
-        width: 800px;
-        height: 80vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 40vw;
-        height: 80vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 210px;
-        }
-
-        .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -352px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 20px;
-            color: #426CBB;
-        }
-
-
-    .entrar {
-        width: 60vw;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .entrar h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            margin-left: -150px;
-            margin-top: 140px;
-            font-size: 80px;
-            text-align: left;
-            color: #D3D3D3;
-        }
-
-    .texto {
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 26px;
-        margin-left: -250px;
-        margin-top: 15px;
-        color: #426CBB;
-    }
-
-    .botao {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -125px;
-        align-items: center;
-    }
-
-    .btn-cel {
-        padding: 7px 38px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        margin-right: 10px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 15px;
-        box-shadow: 1px -1px 1px #AEAEAE;
-    }
-
-    .fa-mobile-screen-button {
-        font-size: 40px;
-        color: #426CBB;
-    }
-
-
-    .btn-email {
-        padding: 7px 38px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 15px;
-        box-shadow: 1px -1px 1px #AEAEAE;
-    }
-
-    .fa-envelope {
-        font-size: 40px;
-        color: #426CBB;
-    }
-
-    .btn-criar {
-        padding: 5px 60px;
-        font-size: 15px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        background-color: #35C12F;
-        color: #FFFFFF;
-        border: 1px solid #35C12F;
-        border-radius: 4px;
-        margin-left: -195px;
-        margin-top: -18px;
-    }
-}
-
-/*-- celular --*/
-
-
-@@media screen and (max-width:420px) {
-
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-        background-size: 430px 1000px;
-    }
-
-
-    .container {
-        width: 400px;
-        height: 70vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 180px;
-        height: 70vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 200px;
-        }
-
-        .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -150px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 15px;
-            color: #426CBB;
-        }
-
-    .entrar {
-        width: 240px;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .entrar h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            margin-left: -20px;
-            font-size: 50px;
-            text-align: left;
-            color: #D3D3D3;
-        }
-
-    .texto {
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -80px;
-        margin-top: 15px;
-        color: #426CBB;
-    }
-
-    .botao {
-        margin-top: 3px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 10px;
-        margin-left: -60px;
-        align-items: center;
-    }
-
-    .btn-cel {
-        padding: 7px 7px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        margin-right: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 13px;
-        box-shadow: 1px -1px 1px #AEAEAE;
-    }
-
-    .fa-mobile-screen-button {
-        font-size: 26px;
-        color: #426CBB;
-    }
-
-
-    .btn-email {
-        padding: 7px 12px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 13px;
-        box-shadow: 1px -1px 1px #AEAEAE;
-    }
-
-    .fa-envelope {
-        font-size: 25px;
-        color: #426CBB;
-    }
-
-    .btn-criar {
-        padding: 5px 10px;
-        font-size: 11px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        background-color: #35C12F;
-        color: #FFFFFF;
-        border: 1px solid #35C12F;
-        border-radius: 4px;
-        margin-left: 5px;
-        margin-top: -18px;
-    }
-}
-
-</style>
-
-<div class="container">
-
-    <div class="img">
-        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
-    </div>
-
-    <div class="entrar">
-            
-        <h1>Cadastro</h1>
-
-        <div class="texto"> Cadastrar por</div>
-
-        <div class="botao">
-            <button @onclick="@(()=>_nav.NavigateTo("/criarcontacelular"))" class="btn-cel"><i class="fa-solid fa-mobile-screen-button"></i> <br /> <p></p>  CELULAR </button>
-            <button @onclick="@(()=>_nav.NavigateTo("/criarcontaemail"))" class="btn-email"><i class="fa-sharp fa-solid fa-envelope"></i> <br />  EMAIL  </button>
+                </div>
+            </div>
         </div>
-
-        <br /><br />
-
-        <div class="voltar" @onclick="@(()=>_nav.NavigateTo("/inicial"))" > 
-            <i class="fa-solid fa-arrow-left"> </i>
-            <p>Voltar</p>
-        </div>
-
     </div>
-
-</div>
+</section>
