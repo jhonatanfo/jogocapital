@@ -2,206 +2,32 @@
 
 @inject NavigationManager _nav;
 
-<style "text/css">
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
+<section class="conta-criada">
+    <div class="container sem-espaco">
+        <div class="row sem-espaco">
+            <div class="col-xs-12 col-sm-12 col-md-12 sem-espaco box">
+                <div>
 
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
+                    <div class="img">
+                        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                    </div>
 
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
+                    <div class="texto">
+                        <p>
+                            Parabéns você acaba de criar sua conta<br> Seja Bem Vindo
+                            <i class="fa-solid fa-check-double"></i>
+                        </p>
+                    </div>
 
-@@font-face {
-    font-family: "Tw Cen MT Std-Bold";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
+                    <div class="btn">
+                        <button @onclick="@(()=>_nav.NavigateTo(" /principal"))" class="btn-conta">
+                            Acessar sua conta
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
 
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-BoldCond.otf");
-}
-
-@@media screen and (max-width:1366px) {
-    {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #FABA0E;
-    }
-
-
-    .container {
-        width: 800px;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        box-shadow: 5px 5px 10px #000000;
-        background: #FABA0E;
-    }
-
-    .img img {
-        width: 140px;
-        height: 160px;
-        margin-top: 20px;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .texto {
-        width: 440px;
-        position: center;
-        font-size: 30px;
-        color: #ffffff;
-        text-align: center;
-        font-family: "Tw Cen MT Std Medium Cond";
-    }
-
-    .fa-check-double {
-        font-size: 25px;
-        color: #00FF00;
-    }
-
-    .btn {
-        width: 300px;
-        height: 30px;
-        margin-top: 20px;
-        text-align: center;
-        background: #000000;
-        border-radius: 5px;
-    }
-
-    .btn-conta {
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 22px;
-        background: #000000;
-        color: #ffffff;
-        text-shadow: 0.1em 0.1em 0.3em white;
-    }
-
-    .fa-arrow-right {
-        margin-left: 15px;
-    }
-}
-
-/*-- celular --*/
-
-@@media screen and (max-width:420px) {
-
-    {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #FABA0E;
-    }
-
-
-    .container {
-        width: 400px;
-        height: 70vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img img {
-        width: 130px;
-        height: 150px;
-        margin-top: 15px;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .texto {
-        width: 320px;
-        position: center;
-        font-size: 20px;
-        color: #ffffff;
-        text-align: center;
-        font-family: "Tw Cen MT Std Medium Cond";
-    }
-
-    .fa-check-double {
-        font-size: 20px;
-        color: #00FF00;
-    }
-
-    .btn {
-        width: 240px;
-        height: 30px;
-        margin-top: 20px;
-        text-align: center;
-        background: #000000;
-        border-radius: 5px;
-    }
-
-    .btn-conta {
-        margin-top: 2px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        background: #000000;
-        color: #ffffff;
-        text-shadow: 0.1em 0.1em 0.3em white;
-        border: none;
-    }
-
-    .fa-arrow-right {
-        margin-left: 12px;
-    }
-}
-
-</style>
-
-<div class="container">
-
-        <div class="img">
-            <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
-        </div> 
-
-                      <div class="texto">
-                          <p2> Porabéns você acaba de criar sua conta</p2>
-                          <i class="fa-solid fa-check-double"></i>
-                          <p1> Seja Bem Vindo </p1>
-                          <br />
-
-                      </div>
-
-        <div class="btn">
-            <button @onclick="@(()=>_nav.NavigateTo("/principal"))" class="btn-conta"> Acessar sua conta  <i class="fa-solid fa-arrow-right"></i> </button>
+            </div>
         </div>
-
-
     </div>
+</section>

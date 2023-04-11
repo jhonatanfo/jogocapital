@@ -16,7 +16,8 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   /*  Pagina Inicial Bem Vindo */
-  .secao-iniciais .container {
+  .secao-iniciais .container,
+  .conta-criada .container {
     width: 80%;
   }
   .secao-iniciais .logo-img img {
@@ -54,11 +55,13 @@
   .secao-iniciais .logo-img {
     height: 250px;
   }
-  .secao-iniciais .logo-img img {
+  .secao-iniciais .logo-img img,
+  .conta-criada .img img {
     width: 129px;
   }
 
-  .secao-iniciais .container {
+  .secao-iniciais .container,
+  .conta-criada .container {
     width: 90%;
   }
   .secao-iniciais {
@@ -154,6 +157,12 @@
   }
   .btg-entrar-esqueceu-senha {
     padding-right: 0;
+  }
+  .conta-criada .texto {
+    font-size: 26px;
+    line-height: 27px;
+    margin-bottom: 30px;
+    padding: 0 20px;
   }
 }
 
