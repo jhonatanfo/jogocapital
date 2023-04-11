@@ -116,7 +116,7 @@
     width: 100%;
   }
   .acessar-com-celular .rz-textbox {
-    padding: 0 0 0 63px;
+    padding: 0 5px 0 63px;
     width: 300px;
     margin: 0 auto;
     display: block;
@@ -132,13 +132,23 @@
     margin-left: -128px;
   }
 
-  .acessar-com-celular .icon-email {
+  .acessar-com-celular .icon-senha {
     position: absolute;
     left: 50%;
     margin-top: 19px;
     margin-left: -140px;
     width: 48px;
   }
+
+  .acessar-com-celular .icon-email {
+    position: absolute;
+    left: 50%;
+    margin-top: 18px;
+    margin-left: -136px;
+    width: 41px;
+    height: auto;
+  }
+
   .btg-entrar-esqueceu-senha .btn-criar {
     width: 100%;
   }

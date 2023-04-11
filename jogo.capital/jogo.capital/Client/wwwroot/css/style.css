@@ -168,7 +168,7 @@
   height: 63px;
   border-radius: 6px;
   border-color: #8b8d8f;
-  padding: 0 0px 0 85px;
+  padding: 0 10px 0 85px;
   margin: 0 0 17px 17px;
   color: #d3d5d3 !important;
   font-family: "Tw Cen MT Std Extra Bold Cond";
@@ -185,9 +185,15 @@
   margin: 9px 0 0 45px;
 }
 
-.acessar-com-celular .icon-email {
+.acessar-com-celular .icon-senha {
   position: absolute;
   margin: 15px 0 0 27px;
+}
+
+.acessar-com-celular .icon-email {
+  position: absolute;
+  height: 31px;
+  margin: 16px 0 0 38px;
 }
 
 .btg-entrar-esqueceu-senha {
