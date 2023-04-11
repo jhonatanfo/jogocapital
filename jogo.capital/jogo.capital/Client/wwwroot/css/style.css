@@ -60,7 +60,7 @@
 }
 
 .secao-iniciais .logo-img img {
-  width: 180px;
+  width: 260px;
   height: auto;
   margin: auto;
 }
@@ -123,8 +123,8 @@
 }
 
 .secao-iniciais .btn-criar {
-  padding: 3px 71px;
-  font-size: 20px;
+  padding: 6px 0;
+  font-size: 21px;
   font-family: "Tw Cen MT Std Extra Bold Cond";
   background-color: #66b22e;
   color: #ffffff;
@@ -136,22 +136,86 @@
 
 .secao-iniciais .btn-voltar {
   padding: 3px 71px;
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Tw Cen MT Std Extra Bold Cond";
-  background-color: #66b22e;
-  color: #ffffff;
-  border: 1px solid #66b22e;
+  background-color: transparent;
+  color: #156eb5;
+  border: none;
   border-radius: 4px;
   margin-left: 17px;
   margin-top: 45px;
   display: block;
   height: 40px;
-  padding-left: 92px;
+  padding-left: 39px;
 }
 
-.secao-iniciais .btn-voltar i {
+.secao-iniciais .btn-voltar img {
   position: absolute;
-  margin: 4px 0 0 -52px;
+  margin: 7px 0 0 -63px;
 }
 
 /* final Pagina Inicial Bem Vindo */
+/* Pagina Acessar com celular */
+
+.campo-form {
+  width: 80%;
+}
+
+.acessar-com-celular .rz-textbox {
+  width: 100%;
+  font-size: 33px;
+  font-weight: 900;
+  height: 63px;
+  border-radius: 6px;
+  border-color: #8b8d8f;
+  padding: 0 0px 0 85px;
+  margin: 0 0 17px 17px;
+  color: #d3d5d3 !important;
+  font-family: "Tw Cen MT Std Extra Bold Cond";
+}
+
+.acessar-com-celular input,
+.acessar-com-celular input::placeholder {
+  color: #d3d5d3 !important;
+}
+
+.acessar-com-celular .icon-celular {
+  position: absolute;
+  height: 45px;
+  margin: 9px 0 0 45px;
+}
+
+.acessar-com-celular .icon-email {
+  position: absolute;
+  margin: 15px 0 0 27px;
+}
+
+.btg-entrar-esqueceu-senha {
+  width: 290px;
+  margin: 0 auto;
+  padding-right: 77px;
+}
+
+.secao-iniciais .btn-criar {
+  margin-left: 15px;
+  margin-top: 38px;
+  width: 340px;
+  margin-bottom: 4px;
+}
+
+.btg-entrar-esqueceu-senha .btn-criar {
+  width: 100%;
+  margin-left: 1px;
+  margin-top: 22px;
+}
+
+.btg-entrar-esqueceu-senha p {
+  font-size: 22px;
+  text-align: center;
+  color: #0a4c8e;
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+/* FIM Pagina Acessar com celular */

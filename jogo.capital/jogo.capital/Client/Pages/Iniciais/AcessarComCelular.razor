@@ -3,474 +3,96 @@
 @inject IAuthService AuthService;
 @inject NavigationManager _nav;
 
-<style "text/css">
-	@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std-Bold";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-BoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-
-
-@@media screen and (max-width:1366px) {
-    {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-    }
-
-    .entrar p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-top: 1px;
-        margin-left: -100px;
-        color: #426CBB;
-        font-size: 15px;
-    }
-
-
-    .container {
-        width: 800px;
-        height: 80vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 40vw;
-        height: 80vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 210px;
-        }
-
-
-    .celular {
-        width: 60vw;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            font-weight: bold;
-            margin-top: 200px;
-            margin-left: -180px;
-            font-size: 20px;
-            color: #000000;
-        }
-
-    /*.texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -105px;
-        background: #FFFFFF;
-        display:flex;
-    }*/
-
-    .texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -135px;
-        background: #FFFFFF;
-        display: flex;
-        flex-direction:column;
-    }
-
-    .btn-cel {
-        width: 270px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 19px;
-    }
-
-    .fa-mobile-screen-button {
-        margin-left: 3px;
-        margin-right: 20px;
-        font-size: 20px;
-        color: #426CBB;
-    }/*
-
-    .btn-ok {
-        width: 40px;
-        height: 25px;
-        margin-top: 1px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: 3px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }*/
-
-    .btn-ok {
-        width: 130px;
-        height: 30px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: -110px;
-        margin-top: 20px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .btn-senha {
-        width: 270px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 19px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -352px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 20px;
-            color: #426CBB;
-        }
-
-    .fa-arrow-left {
-        font-size: 15px;
-        color: #426CBB;
-        margin-right: 3px;
-        margin-top: 3px;
-    }
-}
-
-/*-- celular --*/
-
-
-@@media screen and (max-width:420px) {
-
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-        background-size: 430px 1000px;
-    }
-
-    .entrar p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-top: 1px;
-        margin-left: -5px;
-        color: #426CBB;
-        font-size: 10px;
-    }
-
-    .container {
-        width: 400px;
-        height: 70vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 180px;
-        height: 70vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 200px;
-        }
-
-
-    .celular {
-        width: 30vw;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            font-weight: bold;
-            margin-top: 200px;
-            margin-left: 14px;
-            font-size: 13px;
-            color: #000000;
-        }
-
-    /*.texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 8px;
-        margin-left: 60px;
-        background: #FFFFFF;
-    }*/
-    
-    .texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -10px;
-        background: #FFFFFF;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .btn-cel {
-        width: 130px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 14px;
-    }
-
-    .fa-mobile-screen-button {
-        margin-left: 3px;
-        margin-right: 10px;
-        font-size: 16px;
-        color: #426CBB;
-    }
-
-    /*.btn-ok {
-        width: 30px;
-        height: 25px;
-        margin-top: 2px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: 3px;
-        font-size: 16px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }*/
-
-    .btn-ok {
-        width: 90px;
-        height: 25px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: -10px;
-        margin-top: 10px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .btn-senha {
-        width: 190px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 16px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -50px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 15px;
-            color: #426CBB;
-        }
-
-    .fa-arrow-left {
-        font-size: 10px;
-        color: #426CBB;
-        margin-right: 5px;
-        margin-top: 3px;
-    }
-
-}
-
-</style>
-
 <EditForm Model="regModel" OnValidSubmit="HandleRegistration">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
-@if (ShowErros)
-{
-        <div class="alert alert-danger" role="alert">
-            @foreach (var erro in Erros)
-                {
-                        <p>@erro</p>
-                }
-        </div>
-}
-
-<div class="container">
-
-    <div class="img">
-        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+    @if (ShowErros)
+    {
+    <div class="alert alert-danger" role="alert">
+        @foreach (var erro in Erros)
+        {
+        <p>@erro</p>
+        }
     </div>
+    }
 
-    <div class="celular">
+    <section class="secao-iniciais acessar-com-celular">
+        <div class="container sem-espaco">
+            <div class="row sem-espaco">
+                <div class="col-xs-12 col-sm-12 col-md-5 sem-espaco">
+                    <div class="logo-img">
+                        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 sem-espaco">
+                    <div class="entrar">
+                        <div>
 
-        <h1> DIGITE SEU NÚMERO DE TELEFONE</h1>
 
-        @*<button class="btn-cel"><i class="fa-solid fa-mobile-screen-button"></i> (00) 0 0000 - 0000 </button>
-        <div class="texto">
-            <button class="btn-senha"><i class="fa-solid fa-key fa-flip-horizontal"></i> digite sua senha </button>
-            <button class="btn-ok"> OK </button>
-        </div>*@
+                            <h1 class="titulo">DIGITE SEU NÚMERO DE TELEFONE</h1>
 
-        <div class="texto">
-            @*<button class="btn-cel"><i class="fa-solid fa-mobile-screen-button"></i> (00) 0 0000 - 0000 </button>*@
-            <RadzenMask class="btn-cel" Mask="(**) * ****-****" Pattern="[^0-9]" Placeholder="(00) 0 0000-0000" ID="Mob" Name="Mob" @bind-Value="regModel.Documento" />
-            <RadzenPassword class="btn-senha" ID="Pwd" Name="Pwd" @bind-Value="regModel.Senha"/>
-            @*<button class="btn-senha"><i class="fa-solid fa-key fa-flip-horizontal"></i> digite sua senha </button>*@
+                            <div class="campo-form">
+                                <img src="img/icon-celular.png" class="icon-celular">
+                                <RadzenMask class="campo-tel" Mask="(**) * ****-****" Pattern="[^0-9]"
+                                    Placeholder="(00) 0 0000-0000" ID="Mob" Name="Mob"
+                                    @bind-Value="regModel.Documento" />
+                            </div>
+
+                            <div class="campo-form">
+                                <img src="img/icon-senha.png" class="icon-email">
+                                <RadzenPassword class="campo-senha" ID="Pwd" Name="Pwd" Placeholder="Senha"
+                                    @bind-Value="regModel.Senha" />
+                            </div>
+
+
+                            <div class="btg-entrar-esqueceu-senha">
+                                <button class="btn-criar"> ENTRAR </button>
+                                <p onclick="@(async () => await RecuperarSenha())"> Esqueceu sua senha?</p>
+                            </div>
+
+                            <button class="btn-voltar" @onclick="@(() => _nav.NavigateTo(" /inicial"))">
+                                <img src="img/icon-voltar.png">
+                                <p>Voltar</p>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="entrar">
-            <button class="btn-ok"> ENTRAR </button>
-            <p onclick="@(async () => await RecuperarSenha())"> Esqueceu sua senha?</p>
-        </div>
 
-        <br /><br />
-
-        <div class="voltar" @onclick="@(() => _nav.NavigateTo("/inicial"))" > 
-            <i class="fa-solid fa-arrow-left"> </i>
-            <p>Voltar</p>
-        </div>
-
-    </div>
-
-</div>
-        </EditForm>
+</EditForm>
 
 @code{
-    private acessarModel regModel = new acessarModel();
-        private bool ShowErros;
-        private IEnumerable<string> Erros;
+private acessarModel regModel = new acessarModel();
+private bool ShowErros;
+private IEnumerable<string> Erros;
 
-        protected override void OnInitialized()
-        {
-            regModel = new acessarModel();
-            regModel.Tipo = "Celular";
-        }
+    protected override void OnInitialized()
+    {
+    regModel = new acessarModel();
+    regModel.Tipo = "Celular";
+    }
 
-        private async Task HandleRegistration()
-        {
-            ShowErros = false;
-            var result = await AuthService.Login(regModel);
-            if (result.Sucesso)
-            {
-                _nav.NavigateTo("/principal");
-            } else
-            {
-                Erros = result.Erros;
-                ShowErros = true;
-            }
-        }
-        private async Task RecuperarSenha()
-        {
-        _nav.NavigateTo("/recuperarsenhacelular");
-        }
+    private async Task HandleRegistration()
+    {
+    ShowErros = false;
+    var result = await AuthService.Login(regModel);
+    if (result.Sucesso)
+    {
+    _nav.NavigateTo("/principal");
+    } else
+    {
+    Erros = result.Erros;
+    ShowErros = true;
+    }
+    }
+    private async Task RecuperarSenha()
+    {
+    _nav.NavigateTo("/recuperarsenhacelular");
+    }
     }

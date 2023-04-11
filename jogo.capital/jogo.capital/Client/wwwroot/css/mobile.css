@@ -7,6 +7,10 @@
     width: 254px;
     height: 158px;
   }
+
+  .acessar-com-celular .rz-textbox {
+    font-size: 28px;
+  }
   /* final Pagina Inicial Bem Vindo */
 }
 
@@ -31,6 +35,10 @@
   .secao-iniciais .btn-criar {
     padding: 3px 35px;
     font-size: 18px;
+  }
+
+  .acessar-com-celular .rz-textbox {
+    font-size: 28px;
   }
   /* final Pagina Inicial Bem Vindo */
 }
@@ -90,6 +98,10 @@
     width: 337px;
   }
 
+  .secao-iniciais .btn-voltar {
+    padding: 3px 0px;
+  }
+
   .secao-iniciais .entrar {
     height: auto;
     padding: 25px 0 37px 0;
@@ -99,6 +111,40 @@
     font-size: 64px;
   }
   /* final Pagina Inicial Bem Vindo */
+
+  .campo-form {
+    width: 100%;
+  }
+  .acessar-com-celular .rz-textbox {
+    padding: 0 0 0 63px;
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 17px;
+    font-size: 23px;
+  }
+
+  .acessar-com-celular .icon-celular {
+    position: absolute;
+    height: 38px;
+    left: 50%;
+    margin-top: 13px;
+    margin-left: -128px;
+  }
+
+  .acessar-com-celular .icon-email {
+    position: absolute;
+    left: 50%;
+    margin-top: 19px;
+    margin-left: -140px;
+    width: 48px;
+  }
+  .btg-entrar-esqueceu-senha .btn-criar {
+    width: 100%;
+  }
+  .btg-entrar-esqueceu-senha {
+    padding-right: 0;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
