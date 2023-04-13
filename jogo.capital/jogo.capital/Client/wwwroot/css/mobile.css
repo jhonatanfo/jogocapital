@@ -164,7 +164,30 @@
     margin-bottom: 30px;
     padding: 0 20px;
   }
+
+  .secao-iniciais .idade,
+  .secao-iniciais .termos {
+    width: 310px;
+    margin: 0 auto;
+  }
+  .espaco-mobile {
+    display: block;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
+}
+
+@media (min-width: 767px) {
+  @media screen and (max-height: 730px) {
+    .secao-iniciais {
+      height: auto;
+      padding: 40px 0;
+    }
+
+    .secao-iniciais .logo-img,
+    .secao-iniciais .entrar {
+      height: 717px;
+    }
+  }
 }

@@ -2,419 +2,7 @@
 @inject IAuthService AuthService;
 @inject NavigationManager _nav;
 
-<style "text/css">
-    @@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std-Bold";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-BoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-
-
-@@media screen and (max-width:1366px) {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-    }
-
-
-    .container {
-        width: 800px;
-        height: 80vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 40vw;
-        height: 80vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 210px;
-        }
-
-
-    .celular {
-        width: 60vw;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            font-weight: bold;
-            margin-top: 160px;
-            margin-left: -280px;
-            font-size: 22px;
-            color: #000000;
-        }
-
-    .texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -135px;
-        background: #FFFFFF;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .btn-email {
-        width: 270px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 19px;
-    }
-
-    .fa-envelope {
-        margin-left: 3px;
-        margin-right: 20px;
-        font-size: 30px;
-        color: #426CBB;
-    }
-
-    .btn-senha {
-        width: 270px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 19px;
-    }
-
-    .fa-key {
-        margin-left: 3px;
-        margin-right: 20px;
-        font-size: 28px;
-        color: #426CBB;
-    }
-
-    .idade {
-        display: flex;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 12px;
-        margin-top: 10px;
-        margin-left: -280px;
-    }
-
-        .idade input{
-        margin-right:3px;
-        }
-
-    .termos {
-        display: flex;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 12px;
-        margin-left: -95px;
-        margin-top: -14px;
-    }
-
-        .termos input {
-            margin-right: 3px;
-        }
-
-
-
-    .btn-ok {
-        width: 130px;
-        height: 30px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: -110px;
-        margin-top: 20px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .entrar p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-top: 1px;
-        margin-left: -100px;
-        color: #426CBB;
-        font-size: 15px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -352px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 20px;
-            color: #426CBB;
-        }
-
-    .fa-arrow-left {
-        font-size: 15px;
-        color: #426CBB;
-        margin-right: 3px;
-        margin-top: 3px;
-    }
-}
-
-/*-- celular --*/
-
-
-@@media screen and (max-width:420px) {
-
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-        background-size: 430px 1000px;
-    }
-
-
-    .container {
-        width: 400px;
-        height: 70vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 180px;
-        height: 70vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 200px;
-        }
-
-
-    .celular {
-        width: 250px;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            font-weight: bold;
-            margin-top: 95px;
-            margin-left: -90px;
-            font-size: 20px;
-            color: #000000;
-        }
-
-    .texto {
-        margin-top: 5px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 20px;
-        margin-left: -10px;
-        background: #FFFFFF;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .btn-email {
-        width: 190px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 16px;
-    }
-
-    .fa-envelope {
-        margin-left: 3px;
-        margin-right: 12px;
-        font-size: 20px;
-        color: #426CBB;
-    }
-
-    .btn-senha {
-        width: 190px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 4px;
-        color: #808080;
-        border: 1px solid #555;
-        border-radius: 4px;
-        background: #FFFFFF;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 16px;
-    }
-
-    .fa-key {
-        margin-left: 3px;
-        margin-right: 12px;
-        font-size: 20px;
-        color: #426CBB;
-    }
-
-    .idade {
-        display: flex;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 12px;
-        margin-top: 10px;
-        margin-left: -70px;
-    }
-
-        .idade input {
-            margin-right: 3px;
-            margin-top:-3px;
-        }
-
-    .termos {
-        display: flex;
-        font-family: "Tw Cen MT Std Medium Cond";
-        font-size: 12px;
-        margin-left: 13px;
-    }
-
-        .termos input {
-            margin-right: 3px;
-            margin-top: -13px;
-        }
-
-
-    .btn-ok {
-        width: 90px;
-        height: 25px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: -10px;
-        margin-top: 14px;
-        font-size: 16px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .entrar p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-top: 1px;
-        margin-left: -5px;
-        color: #426CBB;
-        font-size: 10px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -150px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 15px;
-            color: #426CBB;
-        }
-
-    .fa-arrow-left {
-        font-size: 10px;
-        color: #426CBB;
-        margin-right: 5px;
-        margin-top: 3px;
-    }
-}
-
-</style>
+ 
 
         <EditForm Model="regModel" OnValidSubmit="HandleRegistration">
             <DataAnnotationsValidator />
@@ -430,51 +18,68 @@
     </div>
 }
 
-<div class="container">
+   <section class="secao-iniciais acessar-com-celular">
+        <div class="container sem-espaco">
+            <div class="row sem-espaco">
+                <div class="col-xs-12 col-sm-12 col-md-5 sem-espaco">
+                    <div class="logo-img">
+                        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 sem-espaco">
+                    <div class="entrar">
+                        <div>
+                            <h1 class="titulo">Criar sua conta</h1>
 
-        <div class="img">
-            <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                            <div class="campo-form">
+                                <img src="img/icon-email.png" class="icon-email">
+                                <RadzenTextBox class="campo-email" Placeholder="Informe seu e-mail" type="email"  ID="Eml" Name="Eml" @bind-Value="regModel.email" />
+                            </div>
+
+                            <div class="campo-form">
+                                <img src="img/icon-senha.png" class="icon-senha">
+                                <RadzenPassword class="campo-senha" Placeholder="Informe sua senha"   ID="Pwd1" Name="Pwd1" @bind-Value="regModel.senha" />
+                            </div>
+
+                            <div class="campo-form">
+                                <img src="img/icon-senha.png" class="icon-senha">
+                 
+                                <RadzenPassword class="campo-senha" Placeholder="Redigite sua senha" ID="Pwd2" Name="Pwd2" @bind-Value="regModel.confirmarSenha" />
+                            </div>
+
+                            <div style="clear: both;"></div>
+                            <br class="espaco-mobile">
+                            <br class="espaco-mobile">
+
+                            <div class="idade">
+                                <input type="checkbox" ID="Idd" Name="Idd" @bind-value="confIdade">
+                                <p> Eu tenho mais de 18 anos</p>
+                            </div>
+
+                            <div class="termos">
+                                <input type="checkbox" ID="Trm" Name="Trm" @bind-value="confTermo">
+                                <p> Concordo com a politica de privacidade<br> e aceito os <u> Termos e Condições</u></p>
+                            </div>
+
+                            <div class="btg-entrar-esqueceu-senha">
+                                <button class="btn-criar"> CADASTRAR </button>
+                            </div>
+
+                            <button class="btn-voltar"  @onclick="@(() => _nav.NavigateTo("/criarconta"))">
+                                <img src="img/icon-voltar.png">
+                                <p>Voltar</p>
+                            </button>
+ 
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="celular">
-
-            <h1> Criar sua conta </h1>
-
-            <div class="texto">
-                @*<button class="btn-email"><i class="fa-sharp fa-solid fa-envelope"></i> digite seu email </button>
-            <button class="btn-senha"><i class="fa-solid fa-key fa-flip-horizontal"></i> digite sua senha </button>
-            <button class="btn-senha"><i class="fa-solid fa-key fa-flip-horizontal"></i> repita sua senha </button>*@
-                <RadzenTextBox Placeholder="Informe seu e-mail" type="email" class="btn-email" ID="Eml" Name="Eml" @bind-Value="regModel.email" />
-                <RadzenPassword Placeholder="Informe sua senha" class="btn-senha" ID="Pwd1" Name="Pwd1" @bind-Value="regModel.senha" />
-                <RadzenPassword Placeholder="Redigite sua senha" class="btn-senha" ID="Pwd2" Name="Pwd2" @bind-Value="regModel.confirmarSenha" />
-            </div>
-
-            <div class="idade">
-                <input type="checkbox" ID="Idd" Name="Idd" @bind-value="confIdade">
-                <p> Eu tenho mais de 18 anos</p>
-            </div>
-
-            <br />
-
-            <div class="termos">
-                <input type="checkbox" ID="Trm" Name="Trm" @bind-value="confTermo">
-                <p> Concordo com a politica de privacidade e aceito os <u> Termos e Condições</u></p>
-            </div>
-
-            <div class="entrar">
-                <button class="btn-ok"> CADASTRAR </button>
-            </div>
-
-            <br /><br />
-
-            <div class="voltar" @onclick="@(() => _nav.NavigateTo("/criarconta"))">
-                <i class="fa-solid fa-arrow-left"> </i>
-                <p>Voltar</p>
-            </div>
-
-        </div>
-
-    </div>
+ 
         </EditForm>
 
 @code {

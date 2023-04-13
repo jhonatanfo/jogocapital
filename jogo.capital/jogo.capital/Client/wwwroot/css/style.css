@@ -32,6 +32,9 @@
   padding: 0;
   margin: 0;
 }
+.espaco-mobile {
+  display: none;
+}
 
 /*  Pagina Inicial Bem Vindo */
 
@@ -172,6 +175,7 @@
   margin: 0 0 17px 17px;
   color: #d3d5d3 !important;
   font-family: "Tw Cen MT Std Extra Bold Cond";
+  border: 1px solid #000;
 }
 
 .acessar-com-celular input,
@@ -295,4 +299,49 @@
   display: grid;
   align-items: center;
   height: 80vh;
+}
+
+.secao-iniciais .idade,
+.secao-iniciais .termos {
+  padding: 0 0 0 15px;
+  font-size: 18px;
+  font-family: "Tw Cen MT Std Medium Cond";
+}
+
+.secao-iniciais .idade input,
+.secao-iniciais .termos input {
+  float: left;
+  margin: 7px 11px 0 0px;
+}
+
+.acessar-com-celular.verificacao p.text {
+  font-family: "Tw Cen Classified MT Std";
+  font-size: 15px;
+  text-align: left;
+  color: black;
+  margin: 0 21px 18px 25px;
+}
+
+.acessar-com-celular.verificacao .campo-form {
+  width: 100%;
+  clear: both;
+  height: 93px;
+}
+
+.acessar-com-celular.verificacao .campo-form .campos {
+  float: left;
+  margin-left: 93px;
+}
+
+.acessar-com-celular.verificacao .rz-textbox {
+  width: 44px;
+  padding: 0;
+  border: 1px solid #000;
+}
+
+.acessar-com-celular.verificacao .btg-entrar-esqueceu-senha {
+  width: 46px;
+  padding: 0;
+  margin: -12px 0 0 23px;
+  float: left;
 }

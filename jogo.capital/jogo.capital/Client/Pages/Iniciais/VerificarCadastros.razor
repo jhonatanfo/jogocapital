@@ -2,327 +2,7 @@
 @inject IAuthService AuthService;
 @inject NavigationManager _nav;
 
-<style "text/css">
-    @@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std-Bold";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-BoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenMTStd.otf");
-}
-
-
-
-@@media screen and (max-width:1366px) {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-    }
-
-
-    .container {
-        width: 800px;
-        height: 80vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 40vw;
-        height: 80vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 210px;
-        }
-
-
-    .celular {
-        width: 60vw;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            color: #000000;
-            font-size: 35px;
-            margin-left: -250px;
-            margin-top: 180px;
-        }
-
-        .celular p {
-            font-family: "Tw Cen MT Std Medium Cond";
-            color: #000000;
-            font-size: 17px;
-            margin-left: 50px;
-            margin-top: 6px;
-        }
-
-    .texto {
-        margin-left: -190px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .fa-key {
-        font-size: 25px;
-        color: #426CBB;
-        margin-top: 10px;
-        display: flex;
-        margin-right: 3px;
-    }
-
-    .btn-num {
-        width: 28px;
-        height: 40px;
-        margin-top: 10px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        margin-left: 3px;
-        background: #FFFFFF;
-        margin-right: 7px;
-    }
-
-    .btn-ok {
-        width: 40px;
-        height: 35px;
-        margin-top: -37px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: 35px;
-        font-size: 20px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .codigo p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        color: #000000;
-        font-size: 14px;
-        margin-left: -185px;
-        margin-top: 15px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-        margin-left: -365px;
-    }
-
-        .voltar p {
-            font-size: 20px;
-            color: #426CBB;
-            margin-left: 5px;
-        }
-
-    .fa-arrow-left {
-        font-size: 15px;
-        color: #426CBB;
-        margin-top: 9px;
-    }
-}
-
-/*-- celular --*/
-
-
-@@media screen and (max-width:420px) {
-
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/fundinho.png');
-        background-repeat: no-repeat;
-        background-size: 430px 1000px;
-    }
-
-
-    .container {
-        width: 400px;
-        height: 70vh;
-        display: flex;
-        box-shadow: 5px 5px 10px #000000;
-    }
-
-    .img {
-        width: 180px;
-        height: 70vh;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        background-color: #FABA0E;
-        padding: 1rem;
-    }
-
-        .img img {
-            width: 180px;
-            height: 200px;
-        }
-
-
-    .celular {
-        width: 220px;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #FFFFFF;
-    }
-
-        .celular h1 {
-            font-family: "Tw Cen MT Std Medium Cond";
-            color: #000000;
-            font-size: 20px;
-            margin-left: -110px;
-            margin-top: 130px;
-            display: inline;
-        }
-
-        .celular p {
-            font-family: "Tw Cen MT Std Medium Cond";
-            color: #000000;
-            font-size: 12px;
-            margin-left: 20px;
-            margin-top: 3px;
-            display: inline;
-        }
-
-    .texto {
-        margin-left: -50px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .fa-key {
-        font-size: 20px;
-        color: #426CBB;
-        margin-top: 10px;
-        display: flex;
-        margin-right: 3px;
-    }
-
-    .btn-num {
-        width: 20px;
-        height: 30px;
-        margin-top: 10px;
-        border: 1px solid #555;
-        border-radius: 4px;
-        margin-left: 3px;
-        background: #FFFFFF;
-        margin-right: 2px;
-    }
-
-    .btn-ok {
-        width: 27px;
-        height: 25px;
-        margin-top: -27px;
-        border: 0px solid #555;
-        font-family: "Tw Cen MT Std Medium Cond";
-        border-radius: 4px;
-        margin-left: 120px;
-        font-size: 18px;
-        color: #FFFFFF;
-        background: #35C12F;
-    }
-
-    .codigo p {
-        font-family: "Tw Cen MT Std Medium Cond";
-        color: #000000;
-        font-size: 11px;
-        margin-top: 2px;
-        margin-left: -202px;
-    }
-
-    .voltar {
-        font-size: 10px;
-        color: #426CBB;
-        margin-left: -150px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        display: flex;
-    }
-
-        .voltar p {
-            font-size: 15px;
-            color: #426CBB;
-        }
-
-    .fa-arrow-left {
-        font-size: 10px;
-        color: #426CBB;
-        margin-right: -17px;
-        margin-top: 5px;
-    }
-}
-
-</style>
+ 
 
             @if (ShowErros)
 {
@@ -334,45 +14,61 @@
     </div>
 }
 
-	    <div class="container">
 
-        <div class="img">
-            <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+<section class="secao-iniciais acessar-com-celular verificacao">
+        <div class="container sem-espaco">
+            <div class="row sem-espaco">
+                <div class="col-xs-12 col-sm-12 col-md-5 sem-espaco">
+                    <div class="logo-img">
+                        <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 sem-espaco">
+                    <div class="entrar">
+                        <div>
+                            <h1 class="titulo">Verificaçao</h1>
+
+                            <p class="text">Enviamos por mensagem seu código de acesso para confirmar seu cadastro</p>
+
+                            <div class="campo-form">
+                                <img src="img/icon-senha.png" class="icon-senha">
+                                <div class="campos">
+                                <RadzenTextBox type="text" class="btn-num" ID="Num1" Name="Num1" @bind-Value="_num1" MaxLength="1" />
+                                <RadzenTextBox type="text" class="btn-num" ID="Num2" Name="Num2" @bind-Value="_num2" MaxLength="1" />
+                                <RadzenTextBox type="text" class="btn-num" ID="Num3" Name="Num3" @bind-Value="_num3" MaxLength="1" />
+                                <RadzenTextBox type="text" class="btn-num" ID="Num4" Name="Num4" @bind-Value="_num4" MaxLength="1" />
+                                </div>
+                                <div class="btg-entrar-esqueceu-senha" @onclick="@HandleRegistration">
+                                    <button class="btn-criar"> OK </button>
+                                </div>
+
+                            </div>
+
+                   
+                          
+
+                            <div class="codigo">
+                                <p class="text"> Reenviar codigo</p>
+                            </div>
+
+                            <button class="btn-voltar"  @onclick="@(()=>_nav.NavigateTo("/criarconta"))" >
+                                <img src="img/icon-voltar.png">
+                                <p>Voltar</p>
+                            </button>
+
+                  
+ 
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="celular">
 
-            <h1> Verificação</h1>
-
-            <p> Enviamos por mensagem seu código de acesso para confirmar seu cadastro</p>
-
-            <div class="texto">
-                <i class="fa-solid fa-key fa-flip-horizontal"></i>
-                @*<button class="btn-num"> </button>
-                <button class="btn-num"> </button>
-                <button class="btn-num"> </button>
-                <button class="btn-num"> </button>*@
-                <RadzenTextBox type="text" class="btn-num" ID="Num1" Name="Num1" @bind-Value="_num1" MaxLength="1" />
-                <RadzenTextBox type="text" class="btn-num" ID="Num2" Name="Num2" @bind-Value="_num2" MaxLength="1" />
-                <RadzenTextBox type="text" class="btn-num" ID="Num3" Name="Num3" @bind-Value="_num3" MaxLength="1" />
-                <RadzenTextBox type="text" class="btn-num" ID="Num4" Name="Num4" @bind-Value="_num4" MaxLength="1" />
-            </div>
-
-            <button @onclick="@HandleRegistration" class="btn-ok"> OK </button>
-
-            <div class="codigo">
-                <p> Reenviar codigo</p>
-            </div>
-
-            <br /><br />
-
-            <div class="voltar" @onclick="@(()=>_nav.NavigateTo("/criarconta"))" > 
-                <i class="fa-solid fa-arrow-left"> </i>
-                <p>Voltar</p>
-            </div>
-
-        </div>
-    </div>
+	 
 
 @code {
     [Parameter]
