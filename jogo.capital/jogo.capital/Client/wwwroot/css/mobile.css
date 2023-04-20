@@ -41,6 +41,12 @@
     width: 352px;
     height: 260px;
   }
+  .apostar-bolao .esp {
+    width: 46px;
+  }
+  .apostar-bolao .bilhete p2 {
+    margin-left: 330px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -123,6 +129,20 @@
   .btn-bicho-bolao .bolao img {
     width: 273px;
     height: 202px;
+  }
+  .apostar-bolao .btn {
+    padding: 0;
+    font-size: 19px;
+  }
+  .apostar-bolao .btn-apostar {
+    font-size: 21px;
+  }
+
+  .apostar-bolao .esp {
+    width: 31px;
+  }
+  .apostar-bolao .bilhete p2 {
+    margin-left: 0;
   }
 }
 
@@ -336,6 +356,51 @@
     text-align: center;
     margin: 0;
     padding-bottom: 43px;
+  }
+
+  .apostar-bolao .click {
+    display: block;
+    margin-left: 0;
+    margin-top: 67px;
+  }
+  .apostar-bolao .btn,
+  .apostar-bolao .btn-apostar {
+    width: calc(50% - 10px);
+    float: left;
+    margin: 5px 5px;
+  }
+  .apostar-bolao .acumulou {
+    width: 320px;
+    background-size: 100%;
+  }
+  .apostar-bolao .acumulou h1 {
+    margin-top: 51px;
+    margin-left: 51px;
+    font-size: 24px;
+  }
+  .apostar-bolao .btn-acumulou,
+  .apostar-bolao .btn-acumulou1 {
+    height: 35px;
+    width: 15px;
+  }
+  .apostar-bolao .btn-sair {
+    margin-right: 0;
+  }
+  .apostar-bolao .bilh-num1,
+  .apostar-bolao .bilh-num2 {
+    display: block;
+  }
+  .apostar-bolao .digitar {
+    float: left;
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+  .apostar-bolao .bilhete p2 {
+    margin-left: 0;
+  }
+  .apostar-bolao .apostar {
+    width: 92%;
   }
 }
 
