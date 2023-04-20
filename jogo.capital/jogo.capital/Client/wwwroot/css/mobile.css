@@ -2,7 +2,12 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  /*  Pagina Inicial Bem Vindo */
+  footer .redes i {
+    margin-top: 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 21px;
+  }
   .secao-iniciais .entrar .icon-bem-vindo {
     width: 254px;
     height: 158px;
@@ -11,11 +16,52 @@
   .acessar-com-celular .rz-textbox {
     font-size: 28px;
   }
-  /* final Pagina Inicial Bem Vindo */
+  /***/
+  header.topo .logo img {
+    width: 150px;
+    height: 180px;
+  }
+
+  header.topo .cad {
+    width: 132px;
+  }
+  header.topo .menu a {
+    margin-right: 17px;
+  }
+  header.topo .menu {
+    font-size: 25px;
+  }
+  header.topo .jogar {
+    margin-right: 16px;
+    width: 106px;
+    font-size: 29px;
+  }
+  .btn-bicho-bolao .jogoBicho img,
+  .btn-bicho-bolao .bolao img {
+    width: 352px;
+    height: 260px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /*  Pagina Inicial Bem Vindo */
+  footer .redes i {
+    margin-top: 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 21px;
+  }
+  footer .redes {
+    margin-top: 50px;
+  }
+
+  footer .redes h2 {
+    font-size: 17px;
+  }
+
+  footer .direita {
+    margin-top: 85px;
+  }
+
   .secao-iniciais .container,
   .conta-criada .container {
     width: 80%;
@@ -41,7 +87,43 @@
   .acessar-com-celular .rz-textbox {
     font-size: 28px;
   }
-  /* final Pagina Inicial Bem Vindo */
+  /***/
+  header.topo .logo img {
+    height: 112px;
+    margin-top: 16px;
+  }
+
+  header.topo .cad {
+    width: 92px;
+    font-size: 19px;
+    height: 31px;
+  }
+  header.topo .menu a {
+    margin-right: 13px;
+  }
+  header.topo .menu {
+    font-size: 19px;
+    margin-top: 45px;
+  }
+  header.topo .jogar {
+    margin-right: 16px;
+    width: 77px;
+    font-size: 20px;
+    height: 29px;
+  }
+  header.topo {
+    height: 83px;
+  }
+
+  .linha-titulo {
+    height: 80px;
+    font-size: 48px;
+  }
+  .btn-bicho-bolao .jogoBicho img,
+  .btn-bicho-bolao .bolao img {
+    width: 273px;
+    height: 202px;
+  }
 }
 
 @media (min-width: 541px) and (max-width: 767px) {
@@ -51,7 +133,6 @@
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-  /*  Pagina Inicial Bem Vindo */
   .secao-iniciais .logo-img {
     height: 250px;
   }
@@ -113,7 +194,6 @@
   .secao-iniciais .entrar .destaque {
     font-size: 64px;
   }
-  /* final Pagina Inicial Bem Vindo */
 
   .campo-form {
     width: 100%;
@@ -173,9 +253,90 @@
   .espaco-mobile {
     display: block;
   }
-}
+  header.topo {
+    height: 80px;
+  }
+  header.topo .logo img {
+    height: 115px;
+    margin-top: 13px;
+    margin-left: 11px;
+    z-index: 2;
+    position: relative;
+  }
 
-@media (min-width: 0px) and (max-width: 991px) {
+  .linha-titulo {
+    height: 50px;
+    font-size: 25px;
+  }
+  header.topo .menu a,
+  header.topo .jogar {
+    margin-right: 0;
+  }
+  .btn-bicho-bolao {
+    display: initial;
+  }
+
+  .btn-bicho-bolao .jogoBicho img,
+  .btn-bicho-bolao .bolao img {
+    width: 310px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn-bicho-bolao .jogoBicho {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background: #292d2f;
+    margin-top: 33px;
+  }
+
+  footer .rodape {
+    height: auto;
+    display: initial;
+    background: #292d2f;
+  }
+  footer .copy p {
+    /* margin-top: 40px; */
+    /* padding-top: 46px; */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+  }
+  footer .redes {
+    margin-top: 0;
+    font-size: 0;
+  }
+
+  footer .redes h1 {
+    font-size: 25px;
+  }
+  footer .direita {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  footer .direita img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  footer .link {
+    margin: 0 auto;
+    display: block;
+    width: 202px;
+  }
+  footer .link h2 {
+    font-size: 15px;
+  }
+
+  footer .direita h3 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 43px;
+  }
 }
 
 @media (min-width: 767px) {
