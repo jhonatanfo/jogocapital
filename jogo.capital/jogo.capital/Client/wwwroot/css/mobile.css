@@ -50,6 +50,23 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .apostar-bolao .acumulou h1 {
+    font-size: 27px;
+  }
+  .header.topo .btn-nome,
+  .header.topo .btn-saldo {
+    width: 90px;
+    height: 35px;
+  }
+
+  .header.topo .saldo p,
+  .header.topo .nome p {
+    font-size: 19px;
+  }
+  .header.topo .nome,
+  .header.topo .saldo {
+    margin-top: -33px;
+  }
   footer .redes i {
     margin-top: 15px;
     text-align: center;
@@ -109,7 +126,7 @@
   }
   header.topo .menu {
     font-size: 19px;
-    margin-top: 45px;
+    margin-top: -32px;
   }
   header.topo .jogar {
     margin-right: 16px;
@@ -277,6 +294,7 @@
     height: 80px;
   }
   header.topo .logo img {
+    width: auto;
     height: 115px;
     margin-top: 13px;
     margin-left: 11px;
@@ -320,8 +338,8 @@
     background: #292d2f;
   }
   footer .copy p {
-    /* margin-top: 40px; */
-    /* padding-top: 46px; */
+    margin-top: 40px;
+    padding-top: 46px;
     text-align: center;
     position: relative;
     bottom: 0;
@@ -396,11 +414,37 @@
     margin-right: 10px;
     margin-left: 0px;
   }
+  .apostar-bolao .digitar.tres-campos {
+    width: calc(60% - 10px) !important;
+  }
   .apostar-bolao .bilhete p2 {
     margin-left: 0;
   }
   .apostar-bolao .apostar {
     width: 92%;
+  }
+  .header.topo .saldo {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .header.topo .nome {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .header.topo .btn-nome,
+  .header.topo .btn-saldo {
+    margin-right: 0;
+  }
+  .apostar-bolao .acumulou-segundo {
+    width: 260px;
+  }
+  .apostar-bolao .azul {
+    width: 100%;
+  }
+
+  .apostar-bolao .azul p,
+  .apostar-bolao .azul p1 {
+    font-size: 22px;
   }
 }
 

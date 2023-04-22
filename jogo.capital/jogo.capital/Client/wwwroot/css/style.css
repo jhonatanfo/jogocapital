@@ -360,7 +360,7 @@ header.topo .logo img {
   margin-top: 27px;
 }
 header.topo .menu {
-  margin-top: 74px;
+  padding-top: 74px;
   font-size: 28px;
 }
 header.topo .menu a {
@@ -432,6 +432,7 @@ header.topo .cad {
   padding: 40px 20px;
   position: relative;
   user-select: none;
+  z-index: 2;
 }
 
 .header .menu-icon .navicon {
@@ -708,11 +709,6 @@ footer .link h2 {
   margin-top: 20px;
 }
 
-.apostar-bolao .ld-direito {
-  /* display: flex; */
-  /* flex-direction: column; */
-}
-
 .apostar-bolao .acumulou {
   width: 526px;
   height: 200px;
@@ -726,7 +722,7 @@ footer .link h2 {
   margin-top: 20px;
   background-image: url("../img/blacumulado.png");
   background-position: center;
-  background-size: 520px 200px;
+  background-size: 455px;
   background-repeat: no-repeat;
 }
 
@@ -823,7 +819,8 @@ footer .link h2 {
   display: flex;
 }
 
-.apostar-bolao .bolao img {
+.apostar-bolao .bolao img,
+.apostar-bolao .criarAposta img {
   width: 100%;
 }
 
@@ -961,6 +958,263 @@ footer .link h2 {
 .apostar-bolao .btn-valor {
   height: 35px;
   width: 90px;
+  margin-left: 10px;
+  border: none;
+  background: #e3e4e3;
+  border-radius: 1px;
+}
+
+.apostar-bolao .apostar {
+  margin-top: 20px;
+  height: 70px;
+  width: 500px;
+  margin-left: 10px;
+  border: none;
+  background: #62ba46;
+  border-radius: 15px;
+}
+
+.apostar-bolao .apostar p {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 35px;
+  color: #ffffff;
+  line-height: 70px;
+}
+
+.header.topo .nome {
+  margin-left: 0;
+  margin-top: -46px;
+  flex-direction: column;
+}
+
+.header.topo .nome p {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 25px;
+  color: #1b6bb3;
+  margin: 0;
+}
+
+.header.topo .btn-nome {
+  margin-right: 37px;
+  height: 50px;
+  width: 125px;
+  font-size: 40px;
+  background: #edefee;
+  border: none;
+  border-radius: 2px;
+}
+
+.header.topo .saldo {
+  margin-left: -30px;
+  margin-top: -46px;
+  flex-direction: column;
+}
+
+.header.topo .saldo p {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 25px;
+  color: #1b6bb3;
+  margin: 0;
+}
+
+.header.topo .btn-saldo {
+  margin-right: 37px;
+  height: 50px;
+  width: 148px;
+  background: #edefee;
+  border: none;
+  border-radius: 2px;
+}
+
+.header.topo .btn-saldo p {
+  font-size: 27px;
+  color: #1b6bb3;
+  text-align: right;
+  margin-right: 10px;
+  font-family: "Tw Cen MT Std Medium Cond";
+  text-align: center;
+}
+
+.apostar-bolao .acumulou-segundo {
+  width: 526px;
+  height: 142px;
+  margin: 0 auto;
+  display: flex;
+  background: #e3e4e3;
+  border: 7px solid #a8acac;
+  border-radius: 100px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.apostar-bolao .acumulou-segundo h1 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 16px;
+  color: #1b6bb3;
+  font-family: "Tw Cen MT Std Medium Cond";
+  margin-top: 9px;
+}
+
+.apostar-bolao .acumulou-segundo .btn1 h3 {
+  font-size: 40px;
+  margin-left: 6px;
+}
+
+.apostar-bolao .acumulou-segundo h2 {
+  font-size: 22px;
+  color: #1b6bb3;
+  font-family: "Tw Cen MT Std Medium Cond";
+  line-height: 19px;
+}
+
+/*********************/
+
+.apostar-bolao .centena {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: "Tw Cen MT Std Ultra Bold Cond";
+}
+
+.apostar-bolao .inicio {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.apostar-bolao .centena p {
+  font-size: 35px;
+  font-family: "Tw Cen MT Std Medium Cond";
+  color: #1b6bb3;
+  line-height: 29px;
+  margin: 0;
+  margin-left: 6px;
+}
+
+.apostar-bolao .centena p2 {
+  font-size: 25px;
+  font-family: "Tw Cen MT Std Medium Cond";
+  margin-bottom: 10px;
+}
+
+.apostar-bolao .btn-cen1 {
+  height: 30px;
+  width: 30px;
+  border: 6px solid #1b6bb3;
+  background: #ffffff;
+  margin-right: 2px;
+  border-radius: 20px;
+}
+
+.apostar-bolao .btn-cen2 {
+  height: 35px;
+  width: 35px;
+  border: 6px solid #1b6bb3;
+  background: #ffffff;
+  margin-right: 2px;
+  border-radius: 20px;
+}
+
+.apostar-bolao .qntd {
+  margin-top: 10px;
+}
+
+.apostar-bolao .qntd p1 {
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.apostar-bolao .centena p3 {
+  font-size: 35px;
+  margin-top: 20px;
+  font-family: "Tw Cen MT Std Medium Cond";
+}
+
+.apostar-bolao .digitar {
+  height: 200px;
+  width: 350px;
+  margin-right: 20px;
+  margin-left: -10px;
+  /* background-image: url("../img/espaco.png"); */
+  background-size: 350px 200px;
+  background-repeat: no-repeat;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.apostar-bolao .esp {
+  margin-top: 50px;
+  margin-left: 5px;
+  margin-right: 3px;
+  height: 100px;
+  width: 60px;
+  border: 5px solid #1b6bb3;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.apostar-bolao .centena p4 {
+  font-size: 35px;
+  margin-bottom: 15px;
+  font-family: "Tw Cen MT Std Medium Cond";
+}
+
+.apostar-bolao .sn p1 {
+  font-size: 45px;
+  margin-right: 10px;
+}
+
+.apostar-bolao .btn-cen3 {
+  height: 45px;
+  width: 45px;
+  border: 6px solid #1b6bb3;
+  background: #ffffff;
+  margin-right: 2px;
+  border-radius: 25px;
+}
+
+.apostar-bolao .azul {
+  margin-top: 30px;
+  display: flex;
+  height: 70px;
+  width: 680px;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.apostar-bolao .azul p {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 30px;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+.apostar-bolao .azul p1 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  margin-left: 21px;
+}
+
+.apostar-bolao .azul p2 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 30px;
+  margin-left: 100px;
+  color: #ffffff;
+}
+
+.apostar-bolao .btn-valor {
+  height: 40px;
+  width: 280px;
   margin-left: 10px;
   border: none;
   background: #e3e4e3;
