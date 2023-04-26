@@ -1094,6 +1094,7 @@ footer .link h2 {
   line-height: 29px;
   margin: 0;
   margin-left: 6px;
+  margin-right: 12px;
 }
 
 .apostar-bolao .centena p2 {
@@ -1236,4 +1237,16 @@ footer .link h2 {
   font-size: 35px;
   color: #ffffff;
   line-height: 70px;
+}
+
+.apostar-bolao .aprAnimal .aperte .apr {
+  margin: 0 10px;
+  padding: 20px;
+  border: 2px solid #1b6bb3;
+  border-radius: 5px;
+}
+
+.apostar-bolao .aprAnimal .aperte .apr p {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 30px;
 }
