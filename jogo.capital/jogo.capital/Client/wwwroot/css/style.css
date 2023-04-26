@@ -1250,3 +1250,477 @@ footer .link h2 {
   font-family: "Tw Cen MT Std Medium Cond";
   font-size: 30px;
 }
+
+.linha-titulo-img {
+  margin-top: 40px;
+}
+
+.linha-titulo-img img {
+  object-fit: cover;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------ */
+
+.style-calendario-jogo .sorteio {
+  font-family: "Tw Cen MT Std Extra Bold";
+  height: 1150px;
+  width: 100%;
+  font-size: 30px;
+  background: #dbdddb;
+  color: #000000;
+  margin-top: 40px;
+  border-radius: 35px;
+}
+
+.style-calendario-jogo .sorteio p {
+  font-size: 35px;
+  color: #1b6bb3;
+}
+
+.style-calendario-jogo .triang h1 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 100px;
+  color: #1b6bb3;
+  letter-spacing: -3px;
+}
+
+.style-calendario-jogo .triang p {
+  font-family: "Tw Cen MT Std Extra Bold";
+  align-items: center;
+  font-size: 15px;
+  color: #292d2f;
+  text-align: center;
+}
+
+.style-calendario-jogo .dias {
+  flex-direction: row;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.style-calendario-jogo .Dsort1 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  display: flex;
+  margin-left: 20px;
+  margin-right: 25px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 20px;
+  width: 130px;
+  height: 30px;
+  border-radius: 35px;
+  background: #ffffff;
+}
+
+.style-calendario-jogo .Dsort {
+  font-family: "Tw Cen MT Std Extra Bold";
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 20px;
+  width: 140px;
+  height: 30px;
+  border-radius: 35px;
+  background: #ffffff;
+}
+
+.style-calendario-jogo .dias h1 {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+}
+
+.style-calendario-jogo .dias h2 {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  color: #faba0e;
+  margin-right: 15px;
+}
+
+.style-calendario-jogo .cartilha {
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  margin-top: 20px;
+}
+
+.style-calendario-jogo .cartilha img {
+  width: 120px;
+  height: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.style-calendario-jogo .espa {
+  margin-top: 15px;
+  width: 110px;
+  height: 70px;
+  margin-right: 35px;
+  margin-left: 35px;
+  border-radius: 15px;
+  border: 2px solid #013adf;
+  background: #ffffff;
+}
+
+.style-calendario-jogo .resul {
+  font-size: 20px;
+  color: #343434;
+  text-align: initial;
+  margin-left: 30px;
+}
+
+.style-calendario-jogo .legenda {
+  font-family: "Tw Cen MT Std Extra Bold";
+  height: 210px;
+  width: 100%;
+  font-size: 30px;
+  background: #d8d8d8;
+  color: #ffffff;
+  margin-top: 90px;
+  border-radius: 35px;
+}
+
+.style-calendario-jogo .inicio {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.style-calendario-jogo .traco {
+  display: flex;
+  height: 8px;
+  width: 450px;
+  background: #1b6bb3;
+  border: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.style-calendario-jogo .text {
+  font-family: "Tw Cen MT Std Extra Bold";
+  font-size: 20px;
+  border: none;
+  background: #d8d8d8;
+  color: #1b6bb3;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.style-calendario-jogo .lado-lado {
+  display: flex;
+  margin-top: -20px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.style-calendario-jogo .prim {
+  margin-top: 30px;
+  width: 1500px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.style-calendario-jogo .seg {
+  margin-top: 30px;
+  width: 1000px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.style-calendario-jogo .dia {
+  display: flex;
+  height: 35px;
+  width: 520px;
+  margin-right: 20px;
+  margin-top: 5px;
+  border-radius: 35px;
+  border: none;
+  background: #ffffff;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.style-calendario-jogo .dia h1 {
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+}
+
+.style-calendario-jogo .dia h2 {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  color: #faba0e;
+  margin-left: 10px;
+}
+
+.style-calendario-jogo .dia h3 {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.style-calendario-jogo .acumulou {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/acumulou.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+.style-calendario-jogo .acumulou h1 {
+  font-size: 52px;
+  color: #1b6bb3;
+  font-family: "Tw Cen MT Std Medium Cond";
+  margin-top: -80px;
+  margin-bottom: 0;
+}
+
+.style-calendario-jogo .cinza {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
+.style-calendario-jogo .btn-acumulou1 {
+  margin-top: 10px;
+  height: 80px;
+  width: 40px;
+  background: #000000;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+.style-calendario-jogo .btn1 {
+  margin-right: 25px;
+}
+
+.style-calendario-jogo .btn-acumulou {
+  margin-top: 10px;
+  height: 80px;
+  width: 40px;
+  background: #000000;
+  border-radius: 15px;
+}
+
+.style-calendario-jogo .verde {
+  font-family: "Tw Cen MT Std Extra Bold";
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 50px;
+  width: 200px;
+  font-size: 25px;
+  background: #64bc44;
+  color: #ffffff;
+  justify-content: center;
+  border-radius: 25px;
+  margin-top: 18px;
+}
+
+.style-calendario-jogo .sorteio2 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  height: 900px;
+  width: 100%;
+  font-size: 30px;
+  background: #dbdddb;
+  color: #000000;
+  border-radius: 35px;
+}
+
+.style-calendario-jogo .sorteio2 p {
+  font-size: 35px;
+  color: #faba0e;
+}
+
+.style-calendario-jogo .triang2 {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 40px;
+}
+
+.style-calendario-jogo .dias2 {
+  flex-direction: row;
+  display: flex;
+  margin-top: 20px;
+}
+
+.style-calendario-jogo .Dsort2 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  font-size: 20px;
+  width: 110px;
+  height: 30px;
+  border-radius: 35px;
+  background: #ffffff;
+}
+
+.style-calendario-jogo .dias2 h1 {
+  font-size: 25px;
+  font-family: "Tw Cen MT Std Extra Bold";
+}
+
+.style-calendario-jogo .dias2 h2 {
+  font-size: 25px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  color: #faba0e;
+  margin-right: 15px;
+}
+
+.style-calendario-jogo .cartilha2 {
+  flex-direction: row;
+  display: flex;
+  margin-top: 20px;
+}
+
+.style-calendario-jogo .cartilha2 img {
+  width: 110px;
+  height: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.style-calendario-jogo .espa2 {
+  margin-top: 15px;
+  width: 110px;
+  height: 70px;
+  margin-right: 30px;
+  border-radius: 15px;
+  border: 2px solid #013adf;
+  background: #ffffff;
+}
+
+.style-calendario-jogo .resul {
+  margin-top: 60px;
+  font-size: 20px;
+  color: #343434;
+  text-align: initial;
+  margin-left: 30px;
+}
+
+.style-calendario-jogo .legenda2 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  height: 210px;
+  width: 100%;
+  font-size: 30px;
+  background: #d8d8d8;
+  color: #ffffff;
+  margin-top: 90px;
+  border-radius: 35px;
+}
+
+.style-calendario-jogo .prim2 {
+  margin-top: 30px;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  text-align: center;
+}
+
+.style-calendario-jogo .seg2 {
+  margin-top: 10px;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  text-align: center;
+}
+
+.style-calendario-jogo .dia2 {
+  display: flex;
+  height: 35px;
+  width: 600px;
+  border-radius: 35px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  background: #ffffff;
+  margin: 0 20px;
+}
+
+.style-calendario-jogo .dia2 h1 {
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+}
+
+.style-calendario-jogo .dia2 h2 {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  color: #faba0e;
+}
+
+.style-calendario-jogo .regras {
+  margin-top: 10px;
+  display: flex;
+  height: 35px;
+  width: 200px;
+  margin-right: 20px;
+  border-radius: 35px;
+  border: none;
+  font-size: 30px;
+  font-family: "Tw Cen MT Std Medium Cond";
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.style-calendario-jogo .atencao {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  margin-bottom: -30px;
+}
+
+.style-calendario-jogo .atencao img {
+  width: 317px;
+  height: 105px;
+  object-fit: cover;
+  margin: 50px 0;
+}
+
+.style-calendario-jogo .amarelo {
+  text-align: right;
+  margin-top: 55px;
+  width: 100%;
+  height: 100px;
+  font-family: "Tw Cen Classified MT Std";
+  color: #000000;
+  background: #faba0e;
+  font-size: 28px;
+  border: none;
+  border-radius: 30px;
+}
+
+.style-calendario-jogo .amarelo p {
+  margin-top: 10px;
+  width: 680px;
+  height: 100px;
+}

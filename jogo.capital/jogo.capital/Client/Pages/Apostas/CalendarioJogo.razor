@@ -1,1612 +1,409 @@
-@page "/CalendarioJogo" 
+@page "/CalendarioJogo"
 @inject IAuthService AuthService;
 @inject NavigationManager _nav;
 
-<style "text/css">
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold Cond";
-    src: url("../fontes/TwCenMTStd-ExtraBoldCond.otf");
-}
 
-@@font-face {
-    font-family: "Tw Cen MT Std Extra Bold";
-    src: url("../fontes/TwCenMTStd-ExtraBold.otf");
-}
 
-@@font-face {
-    font-family: "Tw Cen Classified MT Std";
-    src: url("../fontes/TwCenClassMTStd-Regular.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std";
-    src: url("../fontes/TwCenMTStd-Bold.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold";
-    src: url("../fontes/TwCenMTStd-UltraBoldIt.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Ultra Bold Cond";
-    src: url("../fontes/TwCenMTStd-UltraBoldCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Medium Cond";
-    src: url("../fontes/TwCenMTStd-MediumCond.otf");
-}
-
-@@font-face {
-    font-family: "Tw Cen MT Std Semi Medium";
-    src: url("../fontes/TwCenMTStd-SemiMedium.otf");
-}
-
-@@media screen and (max-width:1366px) {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    .topo {
-        height: 130px;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        background: #FABA0E;
-        font-family: "Tw Cen MT Std Medium Cond";
-    }
-
-    .logo img {
-        display: flex;
-        position: absolute;
-        width: 170px;
-        height: 200px;
-        margin-top: 24px;
-        margin-left: 23px;
-    }
-
-    .menu {
-        margin-top: 87px;
-        margin-left: 200px;
-        font-size: 32px;
-    }
-
-        .menu a {
-            margin-right: 37px;
-            color: #1b6bb3;
-            text-decoration: none;
-        }
-
-    .jogar {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-right: 37px;
-        height: 42px;
-        width: 125px;
-        font-size: 40px;
-        color: #1b6bb3;
-        border: 1px solid #1b6bb3;
-        border-radius: 5px;
-    }
-
-    .cad {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-right: 37px;
-        height: 31px;
-        width: 160px;
-        font-size: 32px;
-        color: #ffffff;
-        background: #1b6bb3;
-        border: 0px solid #013ADF;
-    }
-
-
-    .linha {
-        margin-top: 40px;
-    }
-
-        .linha img {
-            object-fit: cover;
-            margin-top: 20px;
-            width: 100%;
-            height: 100%;
-        }
-
-    .sorteio {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 1150px;
-        width: 1100px;
-        font-size: 30px;
-        background: #dbdddb;
-        color: #000000;
-        margin-top: 40px;
-        border-radius: 35px;
-    }
-
-        .sorteio p {
-            font-size: 35px;
-            color: #1b6bb3;
-        }
-
-    .triang h1 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        font-size: 100px;
-        color: #1b6bb3;
-        letter-spacing: -3px;
-    }
-
-    .triang p {
-        font-family: "Tw Cen MT Std Extra Bold";
-        margin-left: 500px;
-        align-items: center;
-        font-size: 15px;
-        color: #292d2f;
-    }
-
-    .dias {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-        justify-content: center;
-    }
-
-    .Dsort1 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        margin-left: 20px;
-        margin-right: 25px;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        font-size: 20px;
-        width: 130px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .Dsort {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        margin-left: 20px;
-        margin-right: 20px;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        font-size: 20px;
-        width: 140px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .dias h1 {
-        font-size: 20px;
-        font-family: "Tw Cen MT Std Extra Bold";
-    }
-
-    .dias h2 {
-        font-size: 20px;
-        font-family: "Tw Cen MT Std Extra Bold";
-        color: #FABA0E;
-        margin-right: 15px;
-    }
-
-    .cartilha {
-        justify-content: center;
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-        .cartilha img {
-            width: 120px;
-            height: 100px;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
-
-    .espa {
-        margin-top: 15px;
-        width: 110px;
-        height: 70px;
-        margin-right: 35px;
-        margin-left: 35px;
-        border-radius: 15px;
-        border: 2px solid #013ADF;
-        background: #ffffff;
-    }
-
-    .resul {
-        font-size: 20px;
-        color: #343434;
-        text-align: initial;
-        margin-left: 30px;
-    }
-
-    .legenda {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 210px;
-        width: 1100px;
-        font-size: 30px;
-        background: #D8D8D8;
-        color: #ffffff;
-        margin-top: 90px;
-        border-radius: 35px;
-    }
-
-    .inicio {
-        justify-content: center;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .traco {
-        display: flex;
-        height: 8px;
-        width: 450px;
-        background: #1b6bb3;
-        border: none;
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 20px;
-    }
-
-    .text {
-        font-family: "Tw Cen MT Std Extra Bold";
-        font-size: 20px;
-        border: none;
-        background: #D8D8D8;
-        color: #1b6bb3;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .lado-lado {
-        display: flex;
-        margin-top: -20px;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .prim {
-        margin-top: 30px;
-        width: 1500px;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .seg {
-        margin-top: 30px;
-        width: 1000px;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .dia {
-        display: flex;
-        height: 35px;
-        width: 520px;
-        margin-right: 20px;
-        margin-top: 5px;
-        border-radius: 35px;
-        border: none;
-        background: #ffffff;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-        .dia h1 {
-            margin-left: 10px;
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-        }
-
-        .dia h2 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            color: #FABA0E;
-            margin-left: 10px;
-        }
-
-        .dia h3 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            margin-left: auto;
-            margin-right: 10px;
-        }
-
-
-    .linha2 {
-        margin-top: 40px;
-    }
-
-        .linha2 img {
-            object-fit: cover;
-            margin-top: 20px;
-            width: 100%;
-            height: 100%;
-        }
-
-    .acumulou {
-        width: 100%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/acumulou.png');
-        background-position: center;
-        background-size: 1100px 430px;
-        background-repeat: no-repeat;
-        margin-top: 20px;
-    }
-
-        .acumulou h1 {
-            font-family: "Tw Cen MT Std Ultra Bold Cond";
-            color: #000000;
-            font-size: 85px;
-            margin-left: 130px;
-            margin-top: -100px;
-        }
-
-    .cinza {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-    }
-
-    .btn-acumulou1 {
-        margin-top: 10px;
-        height: 80px;
-        width: 40px;
-        background: #000000;
-        border-radius: 15px;
-        margin-right: 20px;
-    }
-
-    .btn1 {
-        margin-right: 25px;
-    }
-
-    .btn-acumulou {
-        margin-top: 10px;
-        height: 80px;
-        width: 40px;
-        background: #000000;
-        border-radius: 15px;
-    }
-
-    .verde {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        align-items: center;
-        align-content: center;
-        height: 50px;
-        width: 200px;
-        font-size: 25px;
-        background: #64bc44;
-        color: #ffffff;
-        justify-content: center;
-        border-radius: 25px;
-        margin-top: 30px;
-    }
-
-
-    .sorteio2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 900px;
-        width: 1100px;
-        font-size: 30px;
-        background: #dbdddb;
-        color: #000000;
-        border-radius: 35px;
-    }
-
-        .sorteio2 p {
-            font-size: 35px;
-            color: #FABA0E;
-        }
-
-    .triang2 {
-        justify-content: center;
-        display: flex;
-        flex-direction: row;
-        font-size: 40px;
-    }
-
-    .dias2 {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-    .Dsort2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        margin-left: 20px;
-        margin-right: 20px;
-        border: none;
-        font-size: 20px;
-        width: 110px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .dias2 h1 {
-        font-size: 25px;
-        font-family: "Tw Cen MT Std Extra Bold";
-    }
-
-    .dias2 h2 {
-        font-size: 25px;
-        font-family: "Tw Cen MT Std Extra Bold";
-        color: #FABA0E;
-        margin-right: 15px;
-    }
-
-    .cartilha2 {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-        .cartilha2 img {
-            width: 110px;
-            height: 100px;
-            margin-left: 25px;
-            margin-right: 25px;
-        }
-
-    .espa2 {
-        margin-top: 15px;
-        width: 110px;
-        height: 70px;
-        margin-right: 30px;
-        border-radius: 15px;
-        border: 2px solid #013ADF;
-        background: #ffffff;
-    }
-
-    .resul {
-        margin-top: 60px;
-        font-size: 20px;
-        color: #343434;
-        text-align: initial;
-        margin-left: 30px;
-    }
-
-    .legenda2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 210px;
-        width: 1100px;
-        font-size: 30px;
-        background: #D8D8D8;
-        color: #ffffff;
-        margin-top: 90px;
-        border-radius: 35px;
-    }
-
-    .prim2 {
-        margin-top: 30px;
-        width: 1000px;
-        flex-direction: row;
-        display: flex;
-        text-align: center;
-    }
-
-    .seg2 {
-        margin-top: 10px;
-        width: 1000px;
-        flex-direction: row;
-        display: flex;
-        text-align: center;
-        
-    }
-
-    .dia2 {
-        display: flex;
-        height: 35px;
-        width: 600px;
-        margin-right: 20px;
-        border-radius: 35px;
-        border: none;
-        text-align: center;
-        align-items: center;
-        background: #ffffff;
-    }
-
-        .dia2 h1 {
-            margin-left: 10px;
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-        }
-
-        .dia2 h2 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            color: #FABA0E;
-        }
-
-    .regras {
-        margin-top: 10px;
-        display: flex;
-        height: 35px;
-        width: 200px;
-        margin-right: 20px;
-        border-radius: 35px;
-        border: none;
-        font-size: 30px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .atencao {
-        flex-direction: row;
-        display: flex;
-        width: 1350px;
-        height: 200px;
-        margin-bottom: -30px;
-    }
-
-        .atencao img {
-            width: 550px;
-            height: 200px;
-        }
-
-    .amarelo {
-        text-align: right;
-        margin-top: 55px;
-        width: 800px;
-        height: 100px;
-        font-family: "Tw Cen Classified MT Std";
-        color: #000000;
-        background: #FABA0E;
-        font-size: 28px;
-        border: none;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-    }
-
-        .amarelo p {
-            margin-top: 10px;
-            width: 680px;
-            height: 100px;
-        }
-
-
-
-    footer {
-        display: block;
-        color: #ffffff;
-        height: 100%;
-        font-family: "Tw Cen MT Std";
-    }
-
-    .rodape {
-        height: 300px;
-        margin-top: 50px;
-        flex-direction: row;
-        background: #292d2f;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .copy p {
-        margin-top: 260px;
-        font-size: 13px;
-        margin-left: 10px;
-    }
-
-    .redes {
-        margin-top: 70px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-    }
-
-        .redes i {
-            margin-top: 15px;
-            text-align: center;
-            align-items: center;
-            font-size: 30px;
-            margin-right: 15px;
-            margin-left: 15px;
-            margin-bottom: 15px;
-        }
-
-        .redes h2 {
-            margin-top: 15px;
-        }
-
-        .redes .um {
-            width: 140px;
-            height: 70px;
-        }
-
-        .redes .dois {
-            width: 140px;
-            height: 58px;
-            margin-bottom: 6px;
-        }
-
-    .direita {
-        margin-top: 50px;
-        margin-left: 180px;
-        font-size: 12px;
-        letter-spacing: 0.5px;
-    }
-
-        .direita img {
-            height: 150px;
-            width: 230px;
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-    .fa-envelope {
-        font-size: 16px;
-        margin-right: 2px;
-    }
-
-    .direita h3 {
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    .fa-ban {
-        color: #ff0000;
-        font-size: 18px;
-    }
-}
-
-@@media screen and (max-width:420px) {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 1350px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .topo {
-        height: 130px;
-        width: 1350px;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        background: #FABA0E;
-        font-family: "Tw Cen MT Std Medium Cond";
-    }
-
-    .logo img {
-        display: flex;
-        width: 170px;
-        height: 200px;
-        margin-top: 27px;
-        margin-left: 20px;
-    }
-
-    .menu {
-        margin-top: 87px;
-        margin-left: 200px;
-        font-size: 32px;
-    }
-
-        .menu a {
-            margin-right: 37px;
-            color: #1b6bb3;
-            text-decoration: none;
-        }
-
-    .jogar {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-right: 37px;
-        height: 42px;
-        width: 100px;
-        font-size: 40px;
-        color: #1b6bb3;
-        border: 1px solid #1b6bb3;
-        border-radius: 5px;
-    }
-
-    .cad {
-        font-family: "Tw Cen MT Std Medium Cond";
-        margin-right: 37px;
-        height: 31px;
-        width: 160px;
-        font-size: 32px;
-        color: #ffffff;
-        background: #1b6bb3;
-        border: 0px solid #013ADF;
-    }
-
-
-    .linha {
-        margin-top: 40px;
-    }
-
-        .linha img {
-            object-fit: cover;
-            margin-top: 20px;
-            width: 100%;
-            height: 100%;
-        }
-
-    .sorteio {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 1150px;
-        width: 1100px;
-        font-size: 30px;
-        background: #dbdddb;
-        color: #000000;
-        margin-top: 40px;
-        border-radius: 35px;
-    }
-
-        .sorteio p {
-            font-size: 35px;
-            color: #1b6bb3;
-        }
-
-    .triang h1 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        font-size: 100px;
-        color: #1b6bb3;
-        letter-spacing: -3px;
-    }
-
-    .triang p {
-        font-family: "Tw Cen MT Std Extra Bold";
-        margin-left: 500px;
-        align-items: center;
-        font-size: 15px;
-        color: #292d2f;
-    }
-
-    .dias {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-        justify-content: center;
-    }
-
-    .Dsort1 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        margin-left: 20px;
-        margin-right: 25px;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        font-size: 20px;
-        width: 130px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .Dsort {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        margin-left: 20px;
-        margin-right: 20px;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        font-size: 20px;
-        width: 140px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .dias h1 {
-        font-size: 20px;
-        font-family: "Tw Cen MT Std Extra Bold";
-    }
-
-    .dias h2 {
-        font-size: 20px;
-        font-family: "Tw Cen MT Std Extra Bold";
-        color: #FABA0E;
-        margin-right: 15px;
-    }
-
-    .cartilha {
-        justify-content: center;
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-        .cartilha img {
-            width: 120px;
-            height: 100px;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
-
-    .espa {
-        margin-top: 15px;
-        width: 110px;
-        height: 70px;
-        margin-right: 35px;
-        margin-left: 35px;
-        border-radius: 15px;
-        border: 2px solid #013ADF;
-        background: #ffffff;
-    }
-
-    .resul {
-        font-size: 20px;
-        color: #343434;
-        text-align: initial;
-        margin-left: 30px;
-    }
-
-    .legenda {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 210px;
-        width: 1100px;
-        font-size: 30px;
-        background: #D8D8D8;
-        color: #ffffff;
-        margin-top: 90px;
-        border-radius: 35px;
-    }
-
-    .inicio {
-        justify-content: center;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .traco {
-        display: flex;
-        height: 8px;
-        width: 450px;
-        background: #1b6bb3;
-        border: none;
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 20px;
-    }
-
-    .text {
-        font-family: "Tw Cen MT Std Extra Bold";
-        font-size: 20px;
-        border: none;
-        background: #D8D8D8;
-        color: #1b6bb3;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .lado-lado {
-        display: flex;
-        margin-top: -20px;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .prim {
-        margin-top: 30px;
-        width: 1500px;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .seg {
-        margin-top: 30px;
-        width: 1000px;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .dia {
-        display: flex;
-        height: 35px;
-        width: 520px;
-        margin-right: 20px;
-        margin-top: 5px;
-        border-radius: 35px;
-        border: none;
-        background: #ffffff;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-    }
-
-        .dia h1 {
-            margin-left: 10px;
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-        }
-
-        .dia h2 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            color: #FABA0E;
-            margin-left: 10px;
-        }
-
-        .dia h3 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            margin-left: auto;
-            margin-right: 10px;
-        }
-
-
-    .linha2 {
-        margin-top: 40px;
-    }
-
-        .linha2 img {
-            object-fit: cover;
-            margin-top: 20px;
-            width: 100%;
-            height: 100%;
-        }
-
-
-    .acumulou {
-        width: 100%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../img/acumulou.png');
-        background-position: center;
-        background-size: 1100px 430px;
-        background-repeat: no-repeat;
-        margin-top: 20px;
-    }
-
-        .acumulou h1 {
-            font-family: "Tw Cen MT Std Ultra Bold Cond";
-            color: #000000;
-            font-size: 85px;
-            margin-left: 130px;
-            margin-top: -100px;
-        }
-
-    .cinza {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-    }
-
-    .btn-acumulou1 {
-        margin-top: 10px;
-        height: 80px;
-        width: 40px;
-        background: #000000;
-        border-radius: 15px;
-        margin-right: 20px;
-    }
-
-    .btn1 {
-        margin-right: 25px;
-    }
-
-    .btn-acumulou {
-        margin-top: 10px;
-        height: 80px;
-        width: 40px;
-        background: #000000;
-        border-radius: 15px;
-    }
-
-    .verde {
-        font-family: "Tw Cen MT Std Extra Bold";
-        display: flex;
-        align-items: center;
-        align-content: center;
-        height: 50px;
-        width: 200px;
-        font-size: 25px;
-        background: #64bc44;
-        color: #ffffff;
-        justify-content: center;
-        border-radius: 25px;
-        margin-top: 30px;
-    }
-
-
-    .sorteio2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 900px;
-        width: 1100px;
-        font-size: 30px;
-        background: #dbdddb;
-        color: #000000;
-        border-radius: 35px;
-    }
-
-        .sorteio2 p {
-            font-size: 35px;
-            color: #FABA0E;
-        }
-
-    .triang2 {
-        justify-content: center;
-        display: flex;
-        flex-direction: row;
-        font-size: 40px;
-    }
-
-    .dias2 {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-    .Dsort2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        margin-left: 20px;
-        margin-right: 20px;
-        border: none;
-        font-size: 20px;
-        width: 110px;
-        height: 30px;
-        border-radius: 35px;
-        background: #ffffff;
-    }
-
-    .dias2 h1 {
-        font-size: 25px;
-        font-family: "Tw Cen MT Std Extra Bold";
-    }
-
-    .dias2 h2 {
-        font-size: 25px;
-        font-family: "Tw Cen MT Std Extra Bold";
-        color: #FABA0E;
-        margin-right: 15px;
-    }
-
-    .cartilha2 {
-        flex-direction: row;
-        display: flex;
-        margin-top: 20px;
-    }
-
-        .cartilha2 img {
-            width: 110px;
-            height: 100px;
-            margin-left: 25px;
-            margin-right: 25px;
-        }
-
-    .espa2 {
-        margin-top: 15px;
-        width: 110px;
-        height: 70px;
-        margin-right: 30px;
-        border-radius: 15px;
-        border: 2px solid #013ADF;
-        background: #ffffff;
-    }
-
-    .resul {
-        margin-top: 60px;
-        font-size: 20px;
-        color: #343434;
-        text-align: initial;
-        margin-left: 30px;
-    }
-
-    .legenda2 {
-        font-family: "Tw Cen MT Std Extra Bold";
-        height: 210px;
-        width: 1100px;
-        font-size: 30px;
-        background: #D8D8D8;
-        color: #ffffff;
-        margin-top: 90px;
-        border-radius: 35px;
-    }
-
-    .prim2 {
-        margin-top: 30px;
-        width: 1000px;
-        flex-direction: row;
-        display: flex;
-        text-align: center;
-    }
-
-    .seg2 {
-        margin-top: 10px;
-        width: 1000px;
-        flex-direction: row;
-        display: flex;
-        text-align: center;
-    }
-
-    .dia2 {
-        display: flex;
-        height: 35px;
-        width: 600px;
-        margin-right: 20px;
-        border-radius: 35px;
-        border: none;
-        text-align: center;
-        align-items: center;
-        background: #ffffff;
-    }
-
-        .dia2 h1 {
-            margin-left: 10px;
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-        }
-
-        .dia2 h2 {
-            font-size: 20px;
-            font-family: "Tw Cen MT Std Extra Bold";
-            color: #FABA0E;
-        }
-
-    .regras {
-        margin-top: 10px;
-        display: flex;
-        height: 35px;
-        width: 200px;
-        margin-right: 20px;
-        border-radius: 35px;
-        border: none;
-        font-size: 30px;
-        font-family: "Tw Cen MT Std Medium Cond";
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .atencao {
-        flex-direction: row;
-        display: flex;
-        width: 1350px;
-        height: 200px;
-        margin-bottom: -30px;
-    }
-
-        .atencao img {
-            width: 550px;
-            height: 200px;
-        }
-
-    .amarelo {
-        text-align: right;
-        margin-top: 55px;
-        width: 800px;
-        height: 100px;
-        font-family: "Tw Cen Classified MT Std";
-        color: #000000;
-        background: #FABA0E;
-        font-size: 28px;
-        border: none;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-    }
-
-        .amarelo p {
-            margin-top: 10px;
-            width: 680px;
-            height: 100px;
-        }
-
-
-
-    footer {
-        display: block;
-        color: #ffffff;
-        height: 100%;
-        font-family: "Tw Cen MT Std";
-    }
-
-    .rodape {
-        height: 300px;
-        margin-top: 50px;
-        flex-direction: row;
-        background: #292d2f;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .copy p {
-        margin-top: 260px;
-        font-size: 13px;
-        margin-left: 10px;
-    }
-
-    .redes {
-        margin-top: 70px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-    }
-
-        .redes i {
-            margin-top: 15px;
-            text-align: center;
-            align-items: center;
-            font-size: 30px;
-            margin-right: 15px;
-            margin-left: 15px;
-            margin-bottom: 15px;
-        }
-
-        .redes h2 {
-            margin-top: 15px;
-        }
-
-        .redes .um {
-            width: 140px;
-            height: 70px;
-        }
-
-        .redes .dois {
-            width: 140px;
-            height: 58px;
-            margin-bottom: 6px;
-        }
-
-    .direita {
-        margin-top: 50px;
-        margin-left: 180px;
-        font-size: 12px;
-        letter-spacing: 0.5px;
-    }
-
-        .direita img {
-            height: 150px;
-            width: 230px;
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-    .fa-envelope {
-        font-size: 16px;
-        margin-right: 2px;
-    }
-
-    .direita h3 {
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    .fa-ban {
-        color: #ff0000;
-        font-size: 18px;
-    }
-}
-
-</style>
-
-<header>
-        <div class="topo">
-            <div class="logo"> <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" /></div>
-            <div class="menu">
-                <a href="#">HOME</a>
-                <a href="#">GUIA DO JOGO</a>
-                <a href="#">SORTEIOS</a>
-                <button class="jogar"> JOGAR</button>
-                <a href="#">RESULTADO</a>
-                <a href="#">ENTRAR</a>
-                <button class="cad"> CADASTRAR</button>
-            </div>
-        </div>
-    </header>
-
-    <div class="linha"> <img src="img/anim.png" /> </div>
-
-
-    <center>
-        <div class="sorteio">
-            <div class="triang">
-                <h1>RESULTADO DE HOJE</h1>
-                <p>Horário atual</p>
-            </div>
-
-
-            <div class="dias">
-                <button class="Dsort1"> PRÊMIOS </button>
-                <button class="Dsort"> <h1> PTM |</h1> <h2> 11:00 </h2></button>
-                <button class="Dsort"> <h1> PT  |</h1> <h2> 14:00 </h2> </button>
-                <button class="Dsort"> <h1> PTV |</h1> <h2> 16:00 </h2> </button>
-                <button class="Dsort"> <h1> PTN |</h1> <h2> 18:00 </h2> </button>
-                <button class="Dsort"> <h1> COR |</h1> <h2> 21:00 </h2> </button>
-
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num1.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num2.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num3.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num4.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num5.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num6.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num7.png" />
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-                <button class="espa"> </button>
-
-            </div>
-
-
-            <div class="resul"> Resultado da extração do Rio de Janeiro </div>
-
-        </div>
-    </center>
-
-    <center>
-        <div class="legenda">
-            <div class="inicio">
-                <button class="traco"> </button>
-                <button class="text"> LEGENDA </button>
-                <button class="traco"> </button>
-            </div>
-            <div class="lado-lado">
-                <div class="prim">
-                    <button class="dia"> <h1> PTM |</h1> <h2> PARA TODA MANHÃ </h2>  <h3>11:00</h3></button>
-                    <button class="dia"> <h1> PTV |</h1> <h2> PARA TODOS VESPERTINO </h2> <h3> 14:00 </h3></button>
-                    <button class="dia"> <h1> FED |</h1> <h2> FEDERAL (QUARTA E SÁ BADO) </h2> <h3> 19:00</h3></button>
+<header class="header topo">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 centralizar">
+                <div class="logo">
+                    <img src="img/IMAGEM LOGO FUNDO TRANSPARENTE.png" />
                 </div>
-                <div class="seg">
-                    <button class="dia"> <h1> PT  |</h1> <h2> PARA TODOS </h2> <h3> 14:00</h3></button>
-                    <button class="dia"> <h1> PTN |</h1> <h2> PARA TODA NOITE </h2> <h3> 18:00 </h3></button>
-                    <button class="dia"> <h1> COR |</h1> <h2> CORUJINHA </h2> <h3> 21:00</h3></button>
-                </div>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li>
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">GUIA DO JOGO</a>
+                    </li>
+                    <li>
+                        <a href="#">SORTEIOS</a>
+                    </li>
+                    <li>
+                        <button class="jogar"> JOGAR</button>
+                    </li>
+                    <li>
+                        <a href="#">RESULTADO</a>
+                    </li>
+                    <li>
+                        <a href="#">ENTRAR</a>
+                    </li>
+                    <li>
+                        <button class="cad"> CADASTRAR</button>
+                    </li>
+                </ul>
             </div>
         </div>
-    </center>
-
-
-    <div class="linha2"> <img src="img/bolao.png" /> </div>
-
-    <center>
-        <div class="acumulou">
-            <h1>PRÊMIO ACUMULOU</h1>
-
-            <div class="cinza">
-                <div class="btn1">
-                    <button class="btn-acumulou1"> </button>
-                    <button class="btn-acumulou"> </button>
-                    <button class="btn-acumulou"> </button>
-                    <button class="btn-acumulou"> </button>
-                </div>
-                <div class="btn2">
-                    <button class="btn-acumulou"> </button>
-                    <button class="btn-acumulou"> </button>
-                    <button class="btn-acumulou"> </button>
-                </div>
-            </div>
-
-            <div class="verde"> JOGAR  </div>
-
-        </div>
-    </center>
-
-    <center>
-        <div class="sorteio2">
-            <div class="triang2">
-                <h1>SORTEIO</h1>
-            </div>
-
-            <p> Iniciou dia x Termina dia x </p>
-
-
-            <div class="dias2">
-                <button class="Dsort2"> SORTEIOS </button>
-                <h1> QUA |</h1> <h2> 19h </h2>
-                <h1> QUI |</h1> <h2> 14h </h2>
-                <h1> QUI |</h1> <h2> 18h </h2>
-                <h1> SEX |</h1> <h2> 14h </h2>
-                <h1> SEX |</h1> <h2> 18h </h2>
-                <h1> SAB |</h1> <h2> 14h </h2>
-                <h1> SAB |</h1> <h2> 19h </h2>
-            </div>
-
-            <div class="cartilha2">
-                <img src="img/num1.png" />
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num2.png" />
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num3.png" />
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num4.png" />
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-            </div>
-
-            <div class="cartilha">
-                <img src="img/num5.png" />
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-                <button class="espa2"> </button>
-
-            </div>
-
-
-            <div class="resul"> Resultado da extração do Rio de Janeiro </div>
-
-        </div>
-    </center>
-
-    <center>
-        <div class="legenda2">
-            <div class="inicio">
-                <button class="traco"> </button>
-                <button class="text"> LEGENDA </button>
-                <button class="traco"> </button>
-            </div>
-            <div class="prim2">
-                <button class="dia2"> <h1> QUA |</h1> <h2> QUARTA-FEIRA </h2></button>
-                <button class="dia2"> <h1> SEX |</h1> <h2> SEXTA-FEIRA </h2></button>
-            </div>
-            <div class="seg2">
-                <button class="dia2"> <h1> QUI |</h1> <h2> QUINTA-FEIRA </h2></button>
-                <button class="dia2"> <h1> SAB |</h1> <h2> SÁBADO </h2></button>
-            </div>
-
-            <button class="regras"> Leia as regras </button>
-        </div>
-    </center>
-
-    <div class="atencao">
-        <img src="img/atencao.png" />
-        <button class="amarelo">
-            <p>Podem fazer as apostas à partir das <b>20h de sábado</b> e encerra na <b>Quarta-feira às 18h</b> </p>
-        </button>
     </div>
+</header>
 
-    <footer>
-        <div class="rodape">
-            <div class="copy"> <p> Copyright 1993-2022 Animal Game N.V </p></div>
+<div class="linha-titulo-img"> <img src="img/anim.png" /> </div>
 
-            <div class="redes">
-                <h1> SIGA, CURTE E COMPARTILHE!</h1>
-                <div class="icons">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-tiktok"></i>
-                    <i class="fa-brands fa-vimeo-v"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-discord"></i>
-                    <i class="fa-brands fa-github"></i>
+<div class="container style-calendario-jogo">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <center>
+                <div class="sorteio scroll-mobile-y">
+
+                    <div class="triang">
+                        <h1>RESULTADO DE HOJE</h1>
+                        <p>Horário atual</p>
+                    </div>
+
+                    <div class="scroll-mobile">
+
+                        <div class="dias">
+                            <button class="Dsort1"> PRÊMIOS </button>
+                            <button class="Dsort">
+                                <h1> PTM |</h1>
+                                <h2> 11:00 </h2>
+                            </button>
+                            <button class="Dsort">
+                                <h1> PT |</h1>
+                                <h2> 14:00 </h2>
+                            </button>
+                            <button class="Dsort">
+                                <h1> PTV |</h1>
+                                <h2> 16:00 </h2>
+                            </button>
+                            <button class="Dsort">
+                                <h1> PTN |</h1>
+                                <h2> 18:00 </h2>
+                            </button>
+                            <button class="Dsort">
+                                <h1> COR |</h1>
+                                <h2> 21:00 </h2>
+                            </button>
+
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num1.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num2.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num3.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num4.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num5.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num6.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num7.png" />
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+                            <button class="espa"> </button>
+
+                        </div>
+
+
+                        <div class="resul"> Resultado da extração do Rio de Janeiro </div>
+                    </div>
                 </div>
-                <h2> Baixe nosso aplicativo</h2>
-                <img class="um" src="img/google.png" />
-                <img class="dois" src="img/Img_app_store.png" />
-            </div>
+            </center>
 
-            <div class="direita">
-                <img class="dois" src="img/bandeira.png" />
-                <div class="link">
-                    <h2> <i class="fa-regular fa-envelope"></i> suporte@jogos.capital</h2>
+            <center>
+                <div class="legenda scroll-mobile-y">
+                    <div class="scroll-mobile">
+                        <div class="inicio">
+                            <button class="traco"> </button>
+                            <button class="text"> LEGENDA </button>
+                            <button class="traco"> </button>
+                        </div>
+                        <div class="lado-lado">
+                            <div class="prim">
+                                <button class="dia">
+                                    <h1> PTM |</h1>
+                                    <h2> PARA TODA MANHÃ </h2>
+                                    <h3>11:00</h3>
+                                </button>
+                                <button class="dia">
+                                    <h1> PTV |</h1>
+                                    <h2> PARA TODOS VESPERTINO </h2>
+                                    <h3> 14:00 </h3>
+                                </button>
+                                <button class="dia">
+                                    <h1> FED |</h1>
+                                    <h2> FEDERAL (QUARTA E SÁ BADO) </h2>
+                                    <h3> 19:00</h3>
+                                </button>
+                            </div>
+                            <div class="seg">
+                                <button class="dia">
+                                    <h1> PT |</h1>
+                                    <h2> PARA TODOS </h2>
+                                    <h3> 14:00</h3>
+                                </button>
+                                <button class="dia">
+                                    <h1> PTN |</h1>
+                                    <h2> PARA TODA NOITE </h2>
+                                    <h3> 18:00 </h3>
+                                </button>
+                                <button class="dia">
+                                    <h1> COR |</h1>
+                                    <h2> CORUJINHA </h2>
+                                    <h3> 21:00</h3>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <h3> Proibido jogar menores de 18 anos <i class="fa-solid fa-ban"></i> </h3>
-            </div>
-
+            </center>
         </div>
-    </footer>
+    </div>
+</div>
+
+<div class="linha-titulo-img"> <img src="img/bolao.png" /> </div>
+
+<div class="container style-calendario-jogo">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <center>
+                <div class="acumulou">
+                    <h1>PRÊMIO ACUMULOU</h1>
+
+                    <div class="cinza">
+                        <div class="btn1">
+                            <button class="btn-acumulou1"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                        </div>
+                        <div class="btn2">
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                            <button class="btn-acumulou"> </button>
+                        </div>
+                    </div>
+
+                    <div class="verde"> JOGAR </div>
+
+                </div>
+            </center>
+
+            <center>
+                <div class="sorteio2 scroll-mobile-y">
+                    <div class="triang2">
+                        <h1>SORTEIO</h1>
+                    </div>
+
+                    <p> Iniciou dia x Termina dia x </p>
+
+
+                    <div class="scroll-mobile">
+                        <div class="dias2">
+                            <button class="Dsort2"> SORTEIOS </button>
+                            <h1> QUA |</h1>
+                            <h2> 19h </h2>
+                            <h1> QUI |</h1>
+                            <h2> 14h </h2>
+                            <h1> QUI |</h1>
+                            <h2> 18h </h2>
+                            <h1> SEX |</h1>
+                            <h2> 14h </h2>
+                            <h1> SEX |</h1>
+                            <h2> 18h </h2>
+                            <h1> SAB |</h1>
+                            <h2> 14h </h2>
+                            <h1> SAB |</h1>
+                            <h2> 19h </h2>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num1.png" />
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num2.png" />
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num3.png" />
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num4.png" />
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                        </div>
+
+                        <div class="cartilha">
+                            <img src="img/num5.png" />
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+                            <button class="espa2"> </button>
+
+                        </div>
+
+
+                        <div class="resul"> Resultado da extração do Rio de Janeiro </div>
+                    </div>
+                </div>
+            </center>
+
+            <center>
+                <div class="legenda2 scroll-mobile-y">
+                    <div class="inicio">
+                        <button class="traco"> </button>
+                        <button class="text"> LEGENDA </button>
+                        <button class="traco"> </button>
+                    </div>
+                    <div class="scroll-mobile">
+                        <div class="prim2">
+                            <button class="dia2">
+                                <h1> QUA |</h1>
+                                <h2> QUARTA-FEIRA </h2>
+                            </button>
+                            <button class="dia2">
+                                <h1> SEX |</h1>
+                                <h2> SEXTA-FEIRA </h2>
+                            </button>
+                        </div>
+                        <div class="seg2">
+                            <button class="dia2">
+                                <h1> QUI |</h1>
+                                <h2> QUINTA-FEIRA </h2>
+                            </button>
+                            <button class="dia2">
+                                <h1> SAB |</h1>
+                                <h2> SÁBADO </h2>
+                            </button>
+                        </div>
+
+                        <button class="regras"> Leia as regras </button>
+                    </div>
+                </div>
+            </center>
+
+            <div class="atencao">
+                <img src="img/atencao.png" />
+                <button class="amarelo">
+                    <p>Podem fazer as apostas à partir das <b>20h de sábado</b> e encerra na <b>Quarta-feira às 18h</b>
+                    </p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row rodape">
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="copy">
+                    <p> Copyright 1993-2022 Animal Game N.V </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="redes">
+                    <h1> SIGA, CURTE E COMPARTILHE!</h1>
+                    <div class="icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-vimeo-v"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-discord"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h2> Baixe nosso aplicativo</h2>
+                    <img class="um" src="img/google.png" />
+                    <img class="dois" src="img/Img_app_store.png" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="direita">
+                    <img class="dois" src="img/bandeira.png" />
+                    <div class="link">
+                        <h2> <i class="fa-regular fa-envelope"></i> suporte@jogos.capital</h2>
+                    </div>
+                    <h3> Proibido jogar menores de 18 anos <i class="fa-solid fa-ban"></i> </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
