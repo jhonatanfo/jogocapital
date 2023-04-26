@@ -417,6 +417,9 @@
   .apostar-bolao .digitar.tres-campos {
     width: calc(60% - 10px) !important;
   }
+  .apostar-bolao .digitar.quatro-campos {
+    width: calc(100% - 0px) !important;
+  }
   .apostar-bolao .bilhete p2 {
     margin-left: 0;
   }
@@ -445,6 +448,9 @@
   .apostar-bolao .azul p,
   .apostar-bolao .azul p1 {
     font-size: 22px;
+  }
+  .apostar-bolao .btn-valor {
+    width: 220px;
   }
 }
 
