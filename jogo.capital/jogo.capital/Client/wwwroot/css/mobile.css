@@ -2,6 +2,23 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .style-tabela-container.style-calendario-jogo .dias2 h1,
+  .style-tabela-container.style-calendario-jogo .dias2 h2,
+  .style-tabela-container.style-calendario-jogo .Dsort2 {
+    font-size: 15px;
+  }
+
+  .style-tabela-container.style-calendario-jogo .atencao img {
+    width: 164px;
+    height: 54px;
+    object-fit: cover;
+    margin: 83px 0;
+  }
+
+  .style-calendario-jogo .amarelo p {
+    width: 601px;
+  }
+
   .style-calendario-jogo .atencao img {
     width: 244px;
     height: 72px;
@@ -256,11 +273,13 @@
     margin-bottom: 50px;
   }
 
-  .style-calendario-jogo .atencao img {
+  .style-calendario-jogo .atencao img,
+  .style-tabela-container.style-calendario-jogo .atencao img {
     padding-top: 51px;
     margin: 0 auto;
     display: block;
-    height: 151px;
+    height: 171px;
+    width: 100%;
   }
 
   .style-calendario-jogo .verde {

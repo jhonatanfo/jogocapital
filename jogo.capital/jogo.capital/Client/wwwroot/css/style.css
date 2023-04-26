@@ -1724,3 +1724,27 @@ footer .link h2 {
   width: 680px;
   height: 100px;
 }
+
+.style-calendario-jogo .sorteio2.scroll-mobile-y .triang2 h1 {
+  font-size: 52px;
+  color: #1b6bb3;
+  margin: 0 50px;
+}
+
+.style-calendario-jogo .sorteio2.scroll-mobile-y .triang2 i {
+  color: #1b6bb3;
+  margin: 10px 0;
+}
+
+.style-tabela-container.style-calendario-jogo .dias2 h1,
+.style-tabela-container.style-calendario-jogo .dias2 h2,
+.style-tabela-container.style-calendario-jogo .Dsort2 {
+  font-size: 19px;
+}
+
+.style-tabela-container.style-calendario-jogo .atencao img {
+  width: 235px;
+  height: 73px;
+  object-fit: cover;
+  margin: 68px 0;
+}
