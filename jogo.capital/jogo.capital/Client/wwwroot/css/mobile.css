@@ -97,6 +97,18 @@
   .apostar-bolao .bilhete p2 {
     margin-left: 330px;
   }
+
+  /* -- */
+  .dias-calendario .dia {
+    font-size: 22px;
+    text-align: center;
+  }
+  .dias-calendario .escudo p {
+    font-size: 41px;
+  }
+  .dias-calendario .fa-play {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -621,6 +633,22 @@
   }
   .style-calendario-jogo .legenda {
     padding: 0 50px;
+  }
+  /* -- */
+  .dias-calendario .dia {
+    font-size: 16px;
+    text-align: center;
+  }
+  .dias-calendario .escudo p {
+    font-size: 31px;
+    margin-left: -33px;
+  }
+  .dias-calendario .fa-play {
+    margin-top: 20px;
+  }
+  .dias-calendario .escudo {
+    background-size: 80px 80px;
+    height: 94px;
   }
 }
 

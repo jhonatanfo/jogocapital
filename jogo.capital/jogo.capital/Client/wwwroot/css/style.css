@@ -1781,3 +1781,79 @@ footer .link h2 {
   h3 {
   font-size: 16px;
 }
+
+.dias-calendario .fa-sack-dollar {
+  margin-top: 5px;
+  font-size: 155px;
+  margin-right: -200px;
+  margin-left: 100px;
+}
+
+.dias-calendario .triang {
+  font-family: "Tw Cen MT Std Extra Bold";
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+.dias-calendario .fa-play {
+  margin-top: 40px;
+  font-size: 50px;
+  margin-right: 40px;
+  margin-left: 40px;
+  color: #1b6bb3;
+}
+
+.dias-calendario .table {
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 30px;
+}
+
+.dias-calendario .DiaSem {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.dias-calendario .dia {
+  font-family: "Tw Cen MT Std Extra Bold";
+  font-size: 30px;
+  border: none;
+  background: #ffffff;
+  display: inline-block;
+  width: 14.2%;
+}
+
+.dias-calendario .dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #ffffff;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dias-calendario .escudo {
+  display: inline-block;
+  border: none;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  background-image: url("../img/escudo.png");
+  background-position: center;
+  background-size: 120px 120px;
+  background-repeat: no-repeat;
+}
+
+.dias-calendario .escudo p {
+  font-family: "Tw Cen MT Std Extra Bold";
+  font-size: 58px;
+  margin-top: 20px;
+  margin-left: -55px;
+  letter-spacing: -6px;
+}
