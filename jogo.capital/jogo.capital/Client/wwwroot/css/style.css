@@ -1760,3 +1760,24 @@ footer .link h2 {
   object-fit: cover;
   margin: 68px 0;
 }
+
+.style-tabela-container.style-calendario-jogo .scroll-mobile .lado-lado .prim,
+.style-tabela-container.style-calendario-jogo .scroll-mobile .lado-lado .seg {
+  width: calc(48% - 20px);
+  margin: 0 10px;
+  margin-top: 30px;
+}
+.style-tabela-container.style-calendario-jogo .scroll-mobile .lado-lado .dia {
+  width: 100%;
+  margin: 7px 0px;
+}
+
+.style-tabela-container.style-calendario-jogo .scroll-mobile .lado-lado .dia h1,
+.style-tabela-container.style-calendario-jogo .scroll-mobile .lado-lado .dia h2,
+.style-tabela-container.style-calendario-jogo
+  .scroll-mobile
+  .lado-lado
+  .dia
+  h3 {
+  font-size: 16px;
+}
