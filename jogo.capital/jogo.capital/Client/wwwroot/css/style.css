@@ -1714,7 +1714,7 @@ footer .link h2 {
 .style-calendario-jogo .atencao img {
   width: 317px;
   height: 105px;
-  object-fit: cover;
+  object-fit: contain;
   margin: 50px 0;
 }
 
@@ -1856,4 +1856,20 @@ footer .link h2 {
   margin-top: 20px;
   margin-left: -55px;
   letter-spacing: -6px;
+}
+
+.btn-prox {
+  font-family: "Tw Cen MT Std Extra Bold";
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 89px;
+  width: 100%;
+  font-size: 40px;
+  background: #088a29;
+  color: #ffffff;
+  justify-content: center;
+  border-radius: 35px;
+  margin-top: 0;
+  margin-bottom: 65px;
 }

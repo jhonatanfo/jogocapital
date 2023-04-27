@@ -650,6 +650,9 @@
     background-size: 80px 80px;
     height: 94px;
   }
+  .btn-prox {
+    font-size: 30px;
+  }
 }
 
 @media (min-width: 767px) {
