@@ -112,6 +112,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .forma-pagamento .linha-titulo {
+    font-size: 26px;
+  }
   .style-calendario-jogo .amarelo {
     width: 100%;
     height: auto;
@@ -273,6 +276,20 @@
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
+  .forma-pagamento .linha-titulo {
+    font-size: 26px;
+  }
+  .forma-pagamento .escolha {
+    height: 346px;
+    display: block;
+  }
+  .forma-pagamento .forma1,
+  .forma-pagamento .forma2,
+  .forma-pagamento .forma3,
+  .forma-pagamento .forma4 {
+    width: 49%;
+    height: 163px;
+  }
   .style-calendario-jogo .amarelo p {
     width: 100%;
     height: auto;

@@ -1880,3 +1880,50 @@ footer .link h2 {
   margin-top: 0;
   margin-bottom: 65px;
 }
+
+/* ------------- */
+
+.forma-pagamento .linha-titulo {
+  margin-top: 21px;
+  font-size: 35px;
+  text-transform: uppercase;
+  border-radius: 75px;
+}
+
+.forma-pagamento .escolha {
+  margin-top: 30px;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #e3e4e3;
+  justify-content: space-around;
+}
+.forma-pagamento .forma1,
+.forma-pagamento .forma2,
+.forma-pagamento .forma3,
+.forma-pagamento .forma4 {
+  width: 200px;
+  height: 190px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: #e3e4e3;
+}
+
+.forma-pagamento .forma1 {
+  background-image: url("../img/pix.png");
+}
+
+.forma-pagamento .forma2 {
+  background-image: url("../img/cartao.png");
+}
+
+.forma-pagamento .forma3 {
+  background-image: url("../img/boleto.png");
+}
+
+.forma-pagamento .forma4 {
+  background-image: url("../img/outro.png");
+}
