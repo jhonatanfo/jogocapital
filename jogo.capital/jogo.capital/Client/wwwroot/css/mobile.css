@@ -107,7 +107,7 @@
     font-size: 41px;
   }
   .dias-calendario .fa-play {
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
 }
 
@@ -644,7 +644,7 @@
     margin-left: -33px;
   }
   .dias-calendario .fa-play {
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
   .dias-calendario .escudo {
     background-size: 80px 80px;
@@ -652,6 +652,11 @@
   }
   .btn-prox {
     font-size: 30px;
+  }
+  .dias-calendario .triang h1 {
+    margin-bottom: 28px;
+    line-height: 35px;
+    margin: 0;
   }
 }
 
