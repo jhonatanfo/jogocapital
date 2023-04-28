@@ -1927,3 +1927,121 @@ footer .link h2 {
 .forma-pagamento .forma4 {
   background-image: url("../img/outro.png");
 }
+
+.forma-pagamento .painel {
+  margin-top: 30px;
+}
+
+.forma-pagamento .parte1,
+.forma-pagamento .parte2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.forma-pagamento .aposta,
+.forma-pagamento .grupo,
+.forma-pagamento .centena,
+.forma-pagamento .repetir,
+.forma-pagamento .dezena,
+.forma-pagamento .milhar {
+  margin-left: 20px;
+  width: 215px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.forma-pagamento .aposta {
+  background-image: url("../img/CriarAposta.png");
+}
+
+.forma-pagamento .grupo {
+  background-image: url("../img/grupo.png");
+}
+
+.forma-pagamento .centena {
+  background-image: url("../img/centena.png");
+}
+
+.forma-pagamento .repetir {
+  background-image: url("../img/repetir.png");
+}
+
+.forma-pagamento .dezena {
+  background-image: url("../img/dezena.png");
+}
+
+.forma-pagamento .milhar {
+  background-image: url("../img/milhar.png");
+}
+
+.forma-pagamento .jogarbolao {
+  width: 500px;
+  height: 100px;
+  background-image: url("../img/18.png");
+  background-position: center;
+  background-size: 500px 100px;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+}
+
+.forma-pagamento .adc {
+  background-color: #004c92;
+  border-radius: 36px;
+}
+
+.forma-pagamento .adc p {
+  font-family: "Tw Cen MT Std Extra Bold";
+  margin-top: 80px;
+  color: #ffffff;
+  font-size: 34px;
+  text-align: center;
+  padding: 30px 0 0 0;
+}
+.forma-pagamento .adc .escolha {
+  margin-top: 0;
+  width: 100%;
+  height: 244px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #004c92;
+  justify-content: space-around;
+  border-radius: 36px;
+}
+.forma-pagamento .adc .forma1,
+.forma-pagamento .adc .forma2,
+.forma-pagamento .adc .forma3,
+.forma-pagamento .adc .forma4 {
+  width: 200px;
+  height: 190px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: #0b4d8f;
+  background-size: cover;
+}
+
+.forma-pagamento .adc .forma1 {
+  background-image: url("../img/icon-pix.png");
+}
+
+.forma-pagamento .adc .forma2 {
+  background-image: url("../img/icon-cartao.png");
+}
+
+.forma-pagamento .adc .forma3 {
+  background-image: url("../img/icon-boleto.png");
+}
+
+.forma-pagamento .adc .forma4 {
+  background-image: url("../img/icon-outro.png");
+}

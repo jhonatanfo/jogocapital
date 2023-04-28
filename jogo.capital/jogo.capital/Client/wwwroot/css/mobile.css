@@ -641,6 +641,49 @@
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
+  .forma-pagamento .adc .escolha {
+    height: 372px;
+    display: block;
+  }
+  .forma-pagamento .adc .forma1,
+  .forma-pagamento .adc .forma2,
+  .forma-pagamento .adc .forma3,
+  .forma-pagamento .adc .forma4 {
+    width: 49%;
+    height: 165px;
+    background-size: contain;
+  }
+  .forma-pagamento .aposta,
+  .forma-pagamento .grupo,
+  .forma-pagamento .centena,
+  .forma-pagamento .repetir,
+  .forma-pagamento .dezena,
+  .forma-pagamento .milhar {
+    width: 50%;
+  }
+  .forma-pagamento .aposta,
+  .forma-pagamento .grupo,
+  .forma-pagamento .centena,
+  .forma-pagamento .repetir,
+  .forma-pagamento .dezena,
+  .forma-pagamento .milhar {
+    height: 107px;
+    margin-left: 0px;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .forma-pagamento .adc p {
+    margin-top: 46px;
+    font-size: 26px;
+  }
+
+  .forma-pagamento .jogarbolao {
+    width: 300px;
+    background-size: cover;
+    height: 69px;
+  }
+
   .style-calendario-jogo .scroll-mobile-y {
     overflow-y: scroll;
   }
