@@ -1884,10 +1884,12 @@ footer .link h2 {
 /* ------------- */
 
 .forma-pagamento .linha-titulo {
+  height: 75px;
   margin-top: 21px;
   font-size: 35px;
   text-transform: uppercase;
   border-radius: 75px;
+  margin-bottom: 30px;
 }
 
 .forma-pagamento .escolha {
@@ -2044,4 +2046,42 @@ footer .link h2 {
 
 .forma-pagamento .adc .forma4 {
   background-image: url("../img/icon-outro.png");
+}
+
+/********/
+
+.forma-pagamento.form .campo {
+  font-family: "Tw Cen MT Std Extra Bold";
+  color: black;
+  font-size: 34px;
+  margin: 10px 0;
+  position: relative;
+  display: grid;
+}
+
+.forma-pagamento.form .campo p {
+  float: left;
+}
+
+.forma-pagamento.form .campo input {
+  background: #dedede;
+  border: none;
+  margin: 0;
+  width: 100%;
+  float: right;
+}
+
+.forma-pagamento.form .salvar {
+  width: 300px;
+  height: 76px;
+  text-align: center;
+  background-image: url("../img/23.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 35px;
 }
