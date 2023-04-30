@@ -2089,3 +2089,82 @@ footer .link h2 {
   margin: 0 auto;
   margin-top: 35px;
 }
+
+/* ;;;;;;;;;;;;;;;;;;;;;;;; */
+
+.duvidas {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.duvidas img {
+  width: 100%;
+}
+
+.duvidas .perguntas {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.duvidas .como {
+  align-items: center;
+  display: flex;
+  height: 45px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 28px;
+  font-family: "Tw Cen MT Std";
+  margin-right: 20px;
+  background: #d8d8d8;
+}
+
+.duvidas .como p {
+  text-align: initial;
+  color: #363841;
+  margin-left: 10px;
+}
+
+.duvidas .esq {
+  flex-direction: column;
+}
+
+.duvidas .dir {
+  flex-direction: column;
+}
+
+.duvidas .fa-play {
+  font-size: 20px;
+  font-family: "Tw Cen MT Std Extra Bold";
+  margin-left: auto;
+  margin-right: 10px;
+  color: #1b6bb3;
+}
+
+.duvidas .ainda {
+  display: flex;
+  font-size: 25px;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-right: 10px;
+  align-items: center;
+  align-items: center;
+  font-family: "Tw Cen MT Std";
+}
+
+.duvidas .verde {
+  width: 270px;
+  height: 40px;
+  border: none;
+  font-family: "Tw Cen MT Std";
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #1d9444;
+  color: #ffffff;
+}
