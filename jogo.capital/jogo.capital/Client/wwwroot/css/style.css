@@ -1905,7 +1905,8 @@ footer .link h2 {
 .forma-pagamento .forma1,
 .forma-pagamento .forma2,
 .forma-pagamento .forma3,
-.forma-pagamento .forma4 {
+.forma-pagamento .forma4,
+.forma-pagamento .forma5 {
   width: 200px;
   height: 190px;
   background-position: center;
@@ -1928,6 +1929,9 @@ footer .link h2 {
 
 .forma-pagamento .forma4 {
   background-image: url("../img/outro.png");
+}
+.forma-pagamento .forma5 {
+  background-image: url("../img/cartao.png");
 }
 
 .forma-pagamento .painel {
