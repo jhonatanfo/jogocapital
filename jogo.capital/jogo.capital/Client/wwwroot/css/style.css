@@ -2119,7 +2119,7 @@ footer .link h2 {
   border-radius: 10px;
   border: none;
   font-size: 28px;
-  font-family: "Tw Cen MT Std";
+  font-family: "Tw Cen MT Std Extra Bold";
   margin-right: 20px;
   background: #d8d8d8;
 }
@@ -2128,6 +2128,8 @@ footer .link h2 {
   text-align: initial;
   color: #363841;
   margin-left: 10px;
+  margin-top: 12px;
+  font-size: 17px;
 }
 
 .duvidas .esq {
@@ -2140,7 +2142,6 @@ footer .link h2 {
 
 .duvidas .fa-play {
   font-size: 20px;
-  font-family: "Tw Cen MT Std Extra Bold";
   margin-left: auto;
   margin-right: 10px;
   color: #1b6bb3;
@@ -2154,14 +2155,14 @@ footer .link h2 {
   margin-right: 10px;
   align-items: center;
   align-items: center;
-  font-family: "Tw Cen MT Std";
+  font-family: "Tw Cen MT Std Extra Bold";
 }
 
 .duvidas .verde {
   width: 270px;
   height: 40px;
   border: none;
-  font-family: "Tw Cen MT Std";
+  font-family: "Tw Cen MT Std Extra Bold";
   font-size: 25px;
   margin-left: 10px;
   margin-right: 10px;

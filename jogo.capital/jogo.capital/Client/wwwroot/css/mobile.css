@@ -639,6 +639,11 @@
   .apostar-bolao .btn-valor {
     width: 220px;
   }
+
+  .duvidas .perguntas,
+  .duvidas .ainda {
+    display: block;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
