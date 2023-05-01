@@ -358,6 +358,8 @@ header.topo .logo img {
   float: left;
   height: 200px;
   margin-top: 27px;
+  z-index: 2;
+  position: relative;
 }
 header.topo .menu {
   padding-top: 74px;
@@ -2092,17 +2094,17 @@ footer .link h2 {
 
 /* ;;;;;;;;;;;;;;;;;;;;;;;; */
 
-.duvidas {
+.style-calendario-jogo .duvidas {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.duvidas img {
+.style-calendario-jogo .duvidas img {
   width: 100%;
 }
 
-.duvidas .perguntas {
+.style-calendario-jogo .duvidas .perguntas {
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -2110,7 +2112,7 @@ footer .link h2 {
   justify-content: center;
 }
 
-.duvidas .como {
+.style-calendario-jogo .duvidas .como {
   align-items: center;
   display: flex;
   height: 45px;
@@ -2124,7 +2126,7 @@ footer .link h2 {
   background: #d8d8d8;
 }
 
-.duvidas .como p {
+.style-calendario-jogo .duvidas .como p {
   text-align: initial;
   color: #363841;
   margin-left: 10px;
@@ -2132,22 +2134,22 @@ footer .link h2 {
   font-size: 17px;
 }
 
-.duvidas .esq {
+.style-calendario-jogo .duvidas .esq {
   flex-direction: column;
 }
 
-.duvidas .dir {
+.style-calendario-jogo .duvidas .dir {
   flex-direction: column;
 }
 
-.duvidas .fa-play {
+.style-calendario-jogo .duvidas .fa-play {
   font-size: 20px;
   margin-left: auto;
   margin-right: 10px;
   color: #1b6bb3;
 }
 
-.duvidas .ainda {
+.style-calendario-jogo .duvidas .ainda {
   display: flex;
   font-size: 25px;
   margin-left: auto;
@@ -2158,7 +2160,7 @@ footer .link h2 {
   font-family: "Tw Cen MT Std Extra Bold";
 }
 
-.duvidas .verde {
+.style-calendario-jogo .duvidas .verde {
   width: 270px;
   height: 40px;
   border: none;
@@ -2168,4 +2170,18 @@ footer .link h2 {
   margin-right: 10px;
   background: #1d9444;
   color: #ffffff;
+}
+
+.style-calendario-jogo .duvidas h1 {
+  font-family: "Tw Cen MT Std Extra Bold";
+  margin-top: 30px;
+  display: flex;
+  height: 120px;
+  /* background: #1b6bb3; */
+  color: #1b6bb3;
+  font-size: 67px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
