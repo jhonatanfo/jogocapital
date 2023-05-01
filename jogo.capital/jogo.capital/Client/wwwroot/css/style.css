@@ -2165,7 +2165,7 @@ footer .link h2 {
   height: 40px;
   border: none;
   font-family: "Tw Cen MT Std Extra Bold";
-  font-size: 25px;
+  font-size: 18px;
   margin-left: 10px;
   margin-right: 10px;
   background: #1d9444;
@@ -2184,4 +2184,154 @@ footer .link h2 {
   align-content: center;
   align-items: center;
   justify-content: center;
+}
+
+.style-calendario-jogo .tabela.valores-novos {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 459px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .cima {
+  display: flex;
+}
+
+.style-calendario-jogo .tabela.valores-novos .titulo {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 18px;
+  width: 210px;
+  height: 55px;
+  background: #c8cad5;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .parte {
+  display: flex;
+}
+
+.style-calendario-jogo .tabela.valores-novos .aposta {
+  display: flex;
+  flex-direction: column;
+}
+
+.style-calendario-jogo .tabela.valores-novos .ap1 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 20px;
+  width: 210px;
+  height: 80px;
+  background: #1b6bb3;
+  color: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .ap2 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 20px;
+  width: 210px;
+  height: 125px;
+  background: #1b6bb3;
+  color: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .ap3 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 20px;
+  width: 210px;
+  height: 90px;
+  background: #1b6bb3;
+  color: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .pr1 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 20px;
+  width: 210px;
+  height: 80px;
+  background: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .pr2 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 20px;
+  width: 210px;
+  height: 125px;
+  background: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .pr3 {
+  font-family: "Tw Cen MT Std Medium Cond";
+  font-size: 18px;
+  width: 210px;
+  height: 90px;
+  background: #ffffff;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.style-calendario-jogo .tabela.valores-novos .premio {
+  display: flex;
+  flex-direction: column;
+}
+
+.style-calendario-jogo .tabela.valores-novos img {
+  margin-top: 50px;
+  width: 700px;
+}
+
+.fezinha {
+  width: 100%;
+  margin-top: 57px;
 }
