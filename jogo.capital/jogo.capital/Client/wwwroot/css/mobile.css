@@ -694,8 +694,16 @@
     overflow-y: scroll;
   }
 
+  .style-calendario-jogo.none-scroll .scroll-mobile-y {
+    overflow-y: inherit;
+  }
+
   .scroll-mobile {
     width: 1000px;
+  }
+
+  .none-scroll .scroll-mobile {
+    width: 380px;
   }
   .style-calendario-jogo .legenda {
     padding: 0 50px;
@@ -709,6 +717,17 @@
     font-size: 31px;
     margin-left: -33px;
   }
+
+  .dias-calendario.none-scroll .escudo p {
+    font-size: 21px;
+    margin-left: -33px;
+    letter-spacing: -2px;
+  }
+
+  .dias-calendario.none-scroll .escudo {
+    background-size: 41px 48px;
+  }
+
   .dias-calendario .fa-play {
     /* margin-top: 20px; */
   }
